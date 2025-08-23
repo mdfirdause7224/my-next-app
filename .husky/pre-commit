@@ -1,2 +1,2 @@
-npm test
-echo “npm run format” > .husky/pre-commit
+#!/bin/sh
+pnpm run format
