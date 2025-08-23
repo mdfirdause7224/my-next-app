@@ -50,7 +50,7 @@ export default function Navbar() {
               Join us
             </li>
           </ul>
-          <button className="ml-auto lg:ml-0 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-sm md:text-base">
+          <button className="ml-auto lg:ml-0 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block">
             Partner with Us
           </button>
           {/* Mobile menu button */}
