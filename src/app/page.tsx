@@ -4,7 +4,6 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* Page content can go here */}
     </>
   );
 }
