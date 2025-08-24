@@ -2,9 +2,12 @@
 
 import Image from 'next/image';
 import React from 'react';
+import PartnerModal from './PartnerModal';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [partnerModalOpen, setPartnerModalOpen] = React.useState(false);
+
   React.useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -50,7 +53,10 @@ export default function Navbar() {
               Join us
             </li>
           </ul>
-          <button className="ml-auto lg:ml-0 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block">
+          <button
+            className="ml-auto lg:ml-0 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block"
+            onClick={() => setPartnerModalOpen(true)}
+          >
             Partner with Us
           </button>
           {/* Mobile menu button */}
@@ -99,12 +105,20 @@ export default function Navbar() {
                 Join us
               </li>
             </ul>
-            <button className="mt-8 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-base">
+            <button
+              className="mt-8 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-base"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                setPartnerModalOpen(true);
+              }}
+            >
               Partner with Us
             </button>
           </div>
         </div>
       )}
+      {/* PartnerModal */}
+      <PartnerModal open={partnerModalOpen} onClose={() => setPartnerModalOpen(false)} />
     </>
   );
 }
