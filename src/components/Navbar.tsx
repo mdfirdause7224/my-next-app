@@ -40,21 +40,31 @@ export default function Navbar() {
                 Home
               </li>
             </Link>
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              About us
-            </li>
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Services
-            </li>
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Success Stories
-            </li>
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Industries
-            </li>
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Join us
-            </li>
+            <Link href="/About">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                About us
+              </li>
+            </Link>
+            <Link href="/Services">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Services
+              </li>
+            </Link>
+            <Link href="/Success">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Success Stories
+              </li>
+            </Link>
+            <Link href="/Industries">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Industries
+              </li>
+            </Link>
+            <Link href="/JoinUs">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Join us
+              </li>
+            </Link>
           </ul>
           <button
             className="ml-auto lg:ml-0 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block"
