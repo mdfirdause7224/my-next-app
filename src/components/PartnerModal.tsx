@@ -15,7 +15,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ open, onClose }) => {
         <div className="w-full md:w-1/2 p-10">
           <h2 className="text-4xl font-bold mb-2 leading-tight">
             Let's Build something <br />
-            <span className="text-orange-500">Awesome!</span>
+            <span className="text-cyan-500">Awesome!</span>
           </h2>
           <form className="space-y-5 mt-6">
             <div className="md:flex md:space-x-6">
@@ -82,7 +82,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ open, onClose }) => {
             </div>
             <button
               type="submit"
-              className="w-full py-3 rounded-md bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold text-lg mt-2 hover:from-orange-500 hover:to-orange-600 transition"
+              className="w-full py-3 rounded-md bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold text-lg mt-2 hover:from-sky-500 hover:to-blue-600 transition"
             >
               Contact us
             </button>

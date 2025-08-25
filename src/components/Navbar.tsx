@@ -54,7 +54,7 @@ export default function Navbar() {
             </li>
           </ul>
           <button
-            className="ml-auto lg:ml-0 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block"
+            className="ml-auto lg:ml-0 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block"
             onClick={() => setPartnerModalOpen(true)}
           >
             Partner with Us
@@ -106,7 +106,7 @@ export default function Navbar() {
               </li>
             </ul>
             <button
-              className="mt-8 bg-gradient-to-r from-orange-400 to-yellow-400 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-orange-500 hover:to-yellow-500 transition-all whitespace-nowrap text-base"
+              className="mt-8 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-base"
               onClick={() => {
                 setMobileMenuOpen(false);
                 setPartnerModalOpen(true);
@@ -117,7 +117,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      {/* PartnerModal */}
       <PartnerModal open={partnerModalOpen} onClose={() => setPartnerModalOpen(false)} />
     </>
   );
