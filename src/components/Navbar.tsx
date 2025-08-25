@@ -77,7 +77,7 @@ export default function Navbar() {
             <button
               className="p-2 rounded hover:bg-gray-100 focus:outline-none"
               aria-label="Open mobile menu"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(false)}
             >
               <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
               <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
