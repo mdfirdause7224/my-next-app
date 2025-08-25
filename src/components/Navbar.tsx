@@ -104,21 +104,31 @@ export default function Navbar() {
                   Home
                 </li>
               </Link>
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                About us
-              </li>
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                Services
-              </li>
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                Success Stories
-              </li>
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                Industries
-              </li>
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                Join us
-              </li>
+              <Link href="/About">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  About us
+                </li>
+              </Link>
+              <Link href="/Services">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  Services
+                </li>
+              </Link>
+              <Link href="/Success">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  Success Stories
+                </li>
+              </Link>
+              <Link href="/Industries">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  Industries
+                </li>
+              </Link>
+              <Link href="/JoinUs">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  Join us
+                </li>
+              </Link>
             </ul>
             <button
               className="mt-8 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-base"
