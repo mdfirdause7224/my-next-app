@@ -77,7 +77,7 @@ export default function Navbar() {
             <button
               className="p-2 rounded hover:bg-gray-100 focus:outline-none"
               aria-label="Open mobile menu"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => setMobileMenuOpen(true)}
             >
               <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
               <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
@@ -99,36 +99,60 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-1.5 -mt-1"></span>
             </button>
             <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700">
-              <Link href="/Home">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+              <li>
+                <Link
+                  href="/Home"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   Home
-                </li>
-              </Link>
-              <Link href="/About">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/About"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   About us
-                </li>
-              </Link>
-              <Link href="/Services">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/Services"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   Services
-                </li>
-              </Link>
-              <Link href="/Success">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/Success"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   Success Stories
-                </li>
-              </Link>
-              <Link href="/Industries">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/Industries"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   Industries
-                </li>
-              </Link>
-              <Link href="/JoinUs">
-                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/JoinUs"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
+                >
                   Join us
-                </li>
-              </Link>
+                </Link>
+              </li>
             </ul>
             <button
               className="mt-8 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-base"
