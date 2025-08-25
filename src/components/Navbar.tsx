@@ -35,9 +35,11 @@ export default function Navbar() {
             />
           </div>
           <ul className="hidden lg:flex items-center gap-6 xl:gap-10 text-base md:text-lg font-medium text-gray-500 flex-wrap whitespace-nowrap">
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Home
-            </li>
+            <Link href="/Home">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Home
+              </li>
+            </Link>
             <Link href="/About">
               <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
                 About us
