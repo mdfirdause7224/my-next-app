@@ -57,7 +57,7 @@ const PartnerModal: React.FC<PartnerModalProps> = ({ open, onClose }) => {
         {/* Left Section: Form */}
         <div className="w-full md:w-1/2 p-10">
           <h2 className="text-4xl font-bold mb-2 leading-tight">
-            Let&lsquo;s Build something <br />
+            Let`&apos;`s Build something <br />
             <span className="text-cyan-500">Awesome!</span>
           </h2>
           <form onSubmit={handleSubmit} className="space-y-5 mt-6">
