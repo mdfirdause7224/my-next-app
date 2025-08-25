@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import PartnerModal from './PartnerModal';
 
@@ -34,9 +35,11 @@ export default function Navbar() {
             />
           </div>
           <ul className="hidden lg:flex items-center gap-6 xl:gap-10 text-base md:text-lg font-medium text-gray-500 flex-wrap whitespace-nowrap">
-            <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
-              Home
-            </li>
+            <Link href="/Home">
+              <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
+                Home
+              </li>
+            </Link>
             <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
               About us
             </li>
@@ -86,9 +89,11 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-1.5 -mt-1"></span>
             </button>
             <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700">
-              <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
-                Home
-              </li>
+              <Link href="/Home">
+                <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
+                  Home
+                </li>
+              </Link>
               <li className="px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors">
                 About us
               </li>
