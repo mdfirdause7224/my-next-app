@@ -19,13 +19,14 @@ export default function Footer() {
         {/* Right Section */}
         <div className="flex flex-col gap-10 md:gap-16  min-w-[80%] md:min-w-[50%] md:flex-row ">
           {/* Location Section */}
-          <div className="space-y-3 text-xl font-semibold tracking-wider min-w-64 leading-relaxed font-inter">
+          <div className="text-lg tracking-wide min-w-64 leading-relaxed font-geist-sans-serif">
+            <p className="font-mono font-semibold text-xl">ADDRESS</p>
             <p>3rd Floor, KNR Square,</p>
             <p>opp. The Platina,</p>
-            <p>Gachibowli,</p>
-            <p>Kondapur,</p>
-            <p>Hyderabad</p>
-            <p className="font-roboto-mono">+91 94948 20022</p>
+            <p>Gachibowli, Kondapur,</p>
+            <p>Hyderabad, Telangana </p>
+            <p>500032</p>
+            <p className="font-geist-mono">+91 94948 20022</p>
           </div>
 
           {/* Menu + Social Wrapper (always side by side) */}
