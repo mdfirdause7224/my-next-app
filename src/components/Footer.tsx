@@ -24,7 +24,7 @@ export default function Footer() {
             <p>3rd Floor, KNR Square,</p>
             <p>opp. The Platina,</p>
             <p>Gachibowli, Kondapur,</p>
-            <p>Hyderabad, Telangana </p>
+            <p>Hyderabad, Telangana</p>
             <p>500032</p>
             <p className="font-geist-mono">+91 94948 20022</p>
           </div>
