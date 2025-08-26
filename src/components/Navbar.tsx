@@ -1,9 +1,9 @@
 'use client';
 
+import { useRouter } from 'next/dist/client/components/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import PartnerModal from './PartnerModal';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
@@ -20,21 +20,26 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
+  const router = useRouter();
+
   return (
     <>
-      <nav className="bg-white shadow-sm py-3 w-full overflow-x-auto">
+      <nav className="bg-white shadow-sm py-3 w-full overflow-x-auto font-inter">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-4 sm:px-8 md:px-12 gap-y-2">
+          {/* Logo */}
           <div className="flex items-center gap-1 flex-shrink-0">
             <Image
               src="/trangla-logo.png"
-              alt=""
+              alt="Trangla Logo"
               width={180}
               height={48}
               priority
               className="h-12 w-auto max-w-full"
             />
           </div>
-          <ul className="hidden lg:flex items-center gap-6 xl:gap-10 text-base md:text-lg font-medium text-gray-500 flex-wrap whitespace-nowrap">
+
+          {/* Desktop Menu */}
+          <ul className="hidden lg:flex items-center gap-6 xl:gap-10 text-base md:text-lg font-medium text-gray-500 flex-wrap whitespace-nowrap font-inter">
             <Link href="/dashboard">
               <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
                 Home
@@ -66,12 +71,18 @@ export default function Navbar() {
               </li>
             </Link>
           </ul>
+
+          {/* Desktop CTA */}
           <button
-            className="ml-auto lg:ml-0 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block"
-            onClick={() => setPartnerModalOpen(true)}
+            className="ml-auto lg:ml-0 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 md:px-8 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-sm md:text-base hidden lg:inline-block font-geist-sans-serif"
+            onClick={() => {
+              setPartnerModalOpen(true);
+              router.push('/partner');
+            }}
           >
             Partner with Us
           </button>
+
           {/* Mobile menu button */}
           <div className="flex lg:hidden flex-1 justify-end">
             <button
@@ -86,10 +97,12 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-      {/* Mobile menu overlay */}
+
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-start justify-end">
-          <div className="w-3/4 max-w-xs bg-white h-full shadow-lg flex flex-col p-6 animate-slide-in-right">
+          <div className="w-3/4 max-w-xs bg-white h-full shadow-lg flex flex-col p-6 animate-slide-in-right font-geist-mono">
+            {/* Close Button */}
             <button
               className="self-end mb-6 p-2 rounded hover:bg-gray-100 focus:outline-none"
               aria-label="Close mobile menu"
@@ -98,7 +111,9 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-gray-700 rotate-45 translate-y-1.5"></span>
               <span className="block w-6 h-0.5 bg-gray-700 -rotate-45 -translate-y-1.5 -mt-1"></span>
             </button>
-            <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700">
+
+            {/* Mobile Menu Links */}
+            <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700 font-inter">
               <li>
                 <Link
                   href="/dashboard"
@@ -154,11 +169,14 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
+
+            {/* Mobile CTA */}
             <button
-              className="mt-8 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-base"
+              className="mt-8 bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold px-6 py-2 rounded-md shadow hover:from-sky-500 hover:to-blue-600 transition-all whitespace-nowrap text-base font-geist-sans-serif"
               onClick={() => {
                 setMobileMenuOpen(false);
                 setPartnerModalOpen(true);
+                router.push('/partner');
               }}
             >
               Partner with Us
@@ -166,7 +184,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-      <PartnerModal open={partnerModalOpen} onClose={() => setPartnerModalOpen(false)} />
     </>
   );
 }
