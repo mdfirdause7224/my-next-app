@@ -35,7 +35,7 @@ export default function Navbar() {
             />
           </div>
           <ul className="hidden lg:flex items-center gap-6 xl:gap-10 text-base md:text-lg font-medium text-gray-500 flex-wrap whitespace-nowrap">
-            <Link href="/Home">
+            <Link href="/dashboard">
               <li className="cursor-pointer hover:text-sky-600 hover:underline hover:underline-offset-8 transition-colors">
                 Home
               </li>
@@ -101,7 +101,7 @@ export default function Navbar() {
             <ul className="flex flex-col gap-4 text-lg font-medium text-gray-700">
               <li>
                 <Link
-                  href="/Home"
+                  href="/dashboard"
                   onClick={() => setMobileMenuOpen(false)}
                   className="block px-2 py-2 cursor-pointer hover:text-sky-600 hover:bg-gray-50 hover:underline hover:underline-offset-8 transition-colors"
                 >
