@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 
 const PartnerForm: React.FC = () => {
   const [form, setForm] = useState({
-    serviceSelection: '',
     service: '',
+    customService: '',
     name: '',
     phone: '',
     email: '',
@@ -27,10 +27,9 @@ const PartnerForm: React.FC = () => {
     setLoading(true);
     setStatus('');
 
-    const { serviceSelection, service, ...rest } = form;
     const payload = {
-      ...rest,
-      service: serviceSelection === 'Other' ? service : serviceSelection,
+      ...form,
+      service: form.service === 'Other' ? form.customService : form.service,
     };
 
     try {
@@ -43,8 +42,8 @@ const PartnerForm: React.FC = () => {
       if (res.ok) {
         setStatus('✅ Form submitted successfully! Please check your email.');
         setForm({
-          serviceSelection: '',
           service: '',
+          customService: '',
           name: '',
           phone: '',
           email: '',
@@ -62,65 +61,57 @@ const PartnerForm: React.FC = () => {
     }
   };
 
-  // 🔹 Reusable input/textarea class for consistency
-  const inputClass =
-    'w-full border rounded-md px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter';
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-6 font-inter">
-      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl">
+    <div className="min-h-screen flex items-center justify-center bg-white px-4 font-inter">
+      <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl">
         {/* Left Section - Form */}
-        <div className="w-full md:w-7/12 p-10">
-          <h2 className="text-4xl font-bold mb-2 leading-tight font-geist-sans-serif">
+        <div className="w-full md:w-3/5 p-10 md:pr-16">
+          <h2 className="text-5xl font-bold mb-4 leading-tight font-geist-sans-serif">
             Let&apos;s Build something <br />
             <span className="text-cyan-500">Awesome!</span>
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6 mt-8">
-            {/* Service */}
-            <form onSubmit={handleSubmit} noValidate>
-              <div>
-                <label className="block font-semibold mb-2 font-geist-sans-serif">
-                  Service Required <span className="text-orange-500">*</span>
-                </label>
+            {/* Service Selection */}
+            <div>
+              <label className="block font-semibold mb-2 font-geist-mono whitespace-nowrap">
+                Service Required <span className="text-orange-500">*</span>
+              </label>
 
-                <div className="relative">
-                  {form.serviceSelection === 'Other' ? (
-                    <input
-                      type="text"
-                      name="service"
-                      value={form.service}
-                      onChange={handleChange}
-                      placeholder="Please specify your service"
-                      className={`${inputClass} pr-10 appearance-none`}
-                      maxLength={50}
-                      autoFocus
-                    />
-                  ) : (
-                    <select
-                      name="serviceSelection"
-                      value={form.serviceSelection}
-                      onChange={handleChange}
-                      className={`${inputClass} appearance-none pr-10 cursor-pointer font-geist-sans-serif`}
-                    >
-                      <option value="">Select a service</option>
-                      <option value="Software development">Software development</option>
-                      <option value="Web development">Web development</option>
-                      <option value="Mobile application development">
-                        Mobile application development
-                      </option>
-                      <option value="Custom site development">Custom site development</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  )}
+              <div className="relative">
+                <select
+                  name="service"
+                  value={form.service}
+                  onChange={handleChange}
+                  className="w-full h-12 border rounded-md px-3 pr-10 py-2 appearance-none 
+                 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter 
+                 bg-white text-gray-800"
+                  required
+                >
+                  <option value="" className="text-gray-400 bg-white">
+                    -- Select Service --
+                  </option>
+                  <option value="Software developer hiring" className="bg-white text-black">
+                    Software developer hiring
+                  </option>
+                  <option value="Web development" className="bg-white text-black">
+                    Web development
+                  </option>
+                  <option value="Mobile application development" className="bg-white text-black">
+                    Mobile application development
+                  </option>
+                  <option value="Custom site development" className="bg-white text-black">
+                    Custom site development
+                  </option>
+                  <option value="Other" className="bg-white text-black">
+                    Other
+                  </option>
+                </select>
+
+                {/* Custom Arrow */}
+                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
                   <svg
-                    onClick={() => {
-                      if (form.serviceSelection === 'Other') {
-                        setForm({ ...form, serviceSelection: '', service: '' });
-                      }
-                    }}
-                    className={`absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 cursor-pointer 
-          ${form.serviceSelection === 'Other' ? 'hover:text-gray-700' : 'pointer-events-none'}`}
+                    className="w-5 h-5 text-gray-500"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
@@ -130,12 +121,24 @@ const PartnerForm: React.FC = () => {
                   </svg>
                 </div>
               </div>
-            </form>
+
+              {form.service === 'Other' && (
+                <input
+                  type="text"
+                  name="customService"
+                  value={form.customService}
+                  onChange={handleChange}
+                  placeholder="Please specify your service"
+                  className="w-full h-12 mt-3 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
+                  required
+                />
+              )}
+            </div>
 
             {/* Name & Phone */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block font-semibold mb-2 font-geist-sans-serif">
+            <div className="md:flex md:space-x-6">
+              <div className="flex-1 mb-4 md:mb-0">
+                <label className="block font-semibold mb-2 font-geist-sans-serif whitespace-nowrap">
                   Name <span className="text-orange-500">*</span>
                 </label>
                 <input
@@ -144,13 +147,13 @@ const PartnerForm: React.FC = () => {
                   value={form.name}
                   onChange={handleChange}
                   placeholder="Enter Full Name"
-                  className={inputClass}
+                  className="w-full h-12 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
                   required
                   maxLength={50}
                 />
               </div>
-              <div>
-                <label className="block font-semibold mb-2 font-geist-sans-serif">
+              <div className="flex-1">
+                <label className="block font-semibold mb-2 font-geist-sans-serif whitespace-nowrap">
                   Phone Number <span className="text-gray-400 text-sm">(optional)</span>
                 </label>
                 <input
@@ -159,16 +162,16 @@ const PartnerForm: React.FC = () => {
                   value={form.phone}
                   onChange={handleChange}
                   placeholder="Enter Phone Number"
-                  className={inputClass}
+                  className="w-full h-12 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
                   maxLength={20}
                 />
               </div>
             </div>
 
             {/* Email & Purpose */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block font-semibold mb-2 font-geist-sans-serif">
+            <div className="md:flex md:space-x-6">
+              <div className="flex-1 mb-4 md:mb-0">
+                <label className="block font-semibold mb-2 font-geist-sans-serif whitespace-nowrap">
                   Email Id <span className="text-orange-500">*</span>
                 </label>
                 <input
@@ -177,13 +180,13 @@ const PartnerForm: React.FC = () => {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="Enter Email Id"
-                  className={inputClass}
+                  className="w-full h-12 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
                   required
                   maxLength={50}
                 />
               </div>
-              <div>
-                <label className="block font-semibold mb-2 font-geist-sans-serif">
+              <div className="flex-1">
+                <label className="block font-semibold mb-2 font-geist-sans-serif whitespace-nowrap">
                   Purpose of contact <span className="text-gray-400 text-sm">(optional)</span>
                 </label>
                 <input
@@ -192,7 +195,7 @@ const PartnerForm: React.FC = () => {
                   value={form.purpose}
                   onChange={handleChange}
                   placeholder="Enter Purpose of contact"
-                  className={inputClass}
+                  className="w-full h-12 border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
                   maxLength={50}
                 />
               </div>
@@ -200,7 +203,7 @@ const PartnerForm: React.FC = () => {
 
             {/* Message */}
             <div>
-              <label className="block font-semibold mb-2 font-geist-sans-serif">
+              <label className="block font-semibold mb-2 font-geist-sans-serif whitespace-nowrap">
                 Message <span className="text-orange-500">*</span>
               </label>
               <textarea
@@ -208,7 +211,7 @@ const PartnerForm: React.FC = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Type here"
-                className={`${inputClass} h-32 resize-none`}
+                className="w-full border rounded-md px-3 py-2 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-orange-400 font-inter"
                 required
                 maxLength={500}
               />
@@ -217,11 +220,11 @@ const PartnerForm: React.FC = () => {
               </div>
             </div>
 
-            {/* Submit */}
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 rounded-md bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold text-lg mt-2 hover:from-sky-500 hover:to-blue-600 transition font-geist-sans-serif"
+              className="w-full h-12 py-3 rounded-md bg-gradient-to-r from-sky-400 to-blue-500 text-white font-semibold text-lg mt-4 hover:from-sky-500 hover:to-blue-600 transition font-geist-sans-serif"
             >
               {loading ? 'Sending...' : 'Contact us'}
             </button>
@@ -231,7 +234,7 @@ const PartnerForm: React.FC = () => {
         </div>
 
         {/* Right Section - Image */}
-        <div className="hidden md:flex md:w-5/12 items-center justify-center p-10">
+        <div className="hidden md:flex md:w-2/5 items-center justify-center p-10">
           <img
             src="/trangla-logo.png"
             alt="Partner with us"
