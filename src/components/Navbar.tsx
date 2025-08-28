@@ -25,7 +25,7 @@ export default function Navbar() {
     <>
       {/* Sticky Navbar */}
       <header className="fixed top-0 left-0 w-full flex justify-center bg-[#0f0f0f] z-50">
-        <div className="flex justify-center py-3 w-[75vw]">
+        <div className="flex justify-center py-3 w-full md:w-[75vw]">
           <nav className="bg-[#111111] text-white rounded-full px-6 py-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] font-inter">
             {/* Logo */}
             <div className="flex items-center gap-2 flex-shrink-0">
