@@ -37,10 +37,11 @@ export const metadata: Metadata = {
     siteName: 'Trangla Innovations',
     images: [
       {
-        url: '/trangla-logo.png',
-        width: 800,
-        height: 600,
-        alt: 'Trangla Innovations',
+        // Use the triangle icon OG image we generated (1200x630)
+        url: '/trangla_icon_outputs/og_meta_1200x630.png',
+        width: 1200,
+        height: 630,
+        alt: 'Trangla triangle icon',
       },
     ],
     locale: 'en_US',
@@ -50,13 +51,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Trangla Innovations',
     description: 'Contact Trangla Innovations to collaborate and build awesome projects together.',
-    images: ['/trangla-logo.png'],
+    images: ['/trangla_icon_outputs/og_meta_1200x630.png'],
   },
-  // ✅ Favicon using your logo
+  // Favicons / icons: point to the triangle favicon outputs in your public folder
   icons: {
-    icon: '/trangla-logo.png',
-    shortcut: '/trangla-logo.png',
-    apple: '/trangla-logo.png',
+    icon: '/trangla_icon_outputs/favicon-32.png',
+    shortcut: '/trangla_icon_outputs/favicon-16.png',
+    apple: '/trangla_icon_outputs/apple-touch-180.png',
   },
 };
 
