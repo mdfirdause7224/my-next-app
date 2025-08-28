@@ -42,28 +42,38 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8 text-gray-400 text-sm font-medium">
               <Link href="/dashboard">
-                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
-                  Home
+                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
+                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
+                    Home
+                  </span>
                 </li>
               </Link>
               <Link href="/About">
-                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
-                  About us
+                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
+                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
+                    About us
+                  </span>
                 </li>
               </Link>
               <Link href="/Services">
-                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
-                  Services
+                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
+                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
+                    Services
+                  </span>
                 </li>
               </Link>
               <Link href="/Success">
-                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
-                  Success Stories
+                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
+                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
+                    Success Stories
+                  </span>
                 </li>
               </Link>
               <Link href="/Industries">
-                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
-                  Industries
+                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
+                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
+                    Industries
+                  </span>
                 </li>
               </Link>
             </ul>
@@ -78,7 +88,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/partner"
-                className="px-5 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition"
+                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-full text-sm hover:from-sky-600 hover:to-sky-800 transition"
               >
                 Contact Us
               </Link>
