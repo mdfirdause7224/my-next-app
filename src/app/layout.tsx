@@ -46,12 +46,6 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Trangla Innovations',
-    description: 'Contact Trangla Innovations to collaborate and build awesome projects together.',
-    images: ['/trangla_triangle.png'],
-  },
   // Favicons / icons updated to new image
   icons: {
     icon: '/trangla_triangle.png',
