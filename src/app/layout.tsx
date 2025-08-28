@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: 'Trangla Innovations',
     images: [
       {
-        url: '/trangla_enhanced/trangla_icon_512.png', // enhanced OG meta image
+        url: '/trangla_triangle.png', // updated OG meta image
         width: 1200,
         height: 630,
         alt: 'Trangla triangle icon',
@@ -50,13 +50,13 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Trangla Innovations',
     description: 'Contact Trangla Innovations to collaborate and build awesome projects together.',
-    images: ['/trangla_enhanced/trangla_icon_512.png'],
+    images: ['/trangla_triangle.png'],
   },
-  // Favicons / icons from enhanced image
+  // Favicons / icons updated to new image
   icons: {
-    icon: '/trangla_enhanced/trangla_icon_512.png',
-    shortcut: '/trangla_enhanced/trangla_icon_512.png',
-    apple: '/trangla_enhanced/trangla_icon_512.png',
+    icon: '/trangla_triangle.png',
+    shortcut: '/trangla_triangle.png',
+    apple: '/trangla_triangle.png',
   },
 };
 
