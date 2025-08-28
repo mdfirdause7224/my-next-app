@@ -42,19 +42,29 @@ export default function Navbar() {
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8 text-gray-400 text-sm font-medium">
               <Link href="/dashboard">
-                <li className="cursor-pointer hover:text-white transition">Home</li>
+                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
+                  Home
+                </li>
               </Link>
               <Link href="/About">
-                <li className="cursor-pointer hover:text-white transition">About us</li>
+                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
+                  About us
+                </li>
               </Link>
               <Link href="/Services">
-                <li className="cursor-pointer hover:text-white transition">Services</li>
+                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
+                  Services
+                </li>
               </Link>
               <Link href="/Success">
-                <li className="cursor-pointer hover:text-white transition">Success Stories</li>
+                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
+                  Success Stories
+                </li>
               </Link>
               <Link href="/Industries">
-                <li className="cursor-pointer hover:text-white transition">Industries</li>
+                <li className="cursor-pointer hover:text-white transition whitespace-nowrap">
+                  Industries
+                </li>
               </Link>
             </ul>
 
