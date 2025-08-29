@@ -7,6 +7,7 @@ import React from 'react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [activeMenu, setActiveMenu] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     if (mobileMenuOpen) {
@@ -21,12 +22,48 @@ export default function Navbar() {
 
   const router = useRouter();
 
+  // Dropdown mock data
+  const NAV_ITEMS = [
+    { name: 'Home', href: '/dashboard' },
+    { name: 'About us', href: '/About' },
+    { name: 'Services', href: '/Services' },
+    { name: 'Success Stories', href: '/Success' },
+    { name: 'Industries', href: '/Industries' },
+  ];
+
+  const DROPDOWN = (
+    <div className="grid grid-cols-3 gap-6">
+      {NAV_ITEMS.map((item) => (
+        <div key={item.name}>
+          <h4 className="text-white font-semibold mb-2">{item.name}</h4>
+          <ul className="text-gray-300 space-y-1">
+            <li>
+              <Link href="#" className="hover:text-white transition">
+                Feature A
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white transition">
+                Feature B
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="hover:text-white transition">
+                Learn More
+              </Link>
+            </li>
+          </ul>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <>
       {/* Sticky Navbar */}
       <header className="fixed top-0 left-0 w-full flex justify-center bg-[#0f0f0f] z-50">
         <div className="flex justify-center py-3 w-full md:w-[75vw]">
-          <nav className="bg-[#111111] text-white rounded-full px-6 py-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] font-inter">
+          <nav className="bg-[#111111] text-white rounded-full px-6 py-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] font-inter relative">
             {/* Logo */}
             <div className="flex items-center gap-2 flex-shrink-0">
               <Image
@@ -41,41 +78,23 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center gap-8 text-gray-400 text-sm font-medium">
-              <Link href="/dashboard">
-                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
-                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
-                    Home
-                  </span>
+              {NAV_ITEMS.map((item) => (
+                <li
+                  key={item.name}
+                  onMouseEnter={() => setActiveMenu(item.name)}
+                  className="relative cursor-pointer whitespace-nowrap"
+                >
+                  <Link href={item.href}>
+                    <span
+                      className={`relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 hover:after:w-[70%] ${
+                        activeMenu === item.name ? 'text-white after:w-[70%]' : 'hover:text-white'
+                      }`}
+                    >
+                      {item.name}
+                    </span>
+                  </Link>
                 </li>
-              </Link>
-              <Link href="/About">
-                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
-                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
-                    About us
-                  </span>
-                </li>
-              </Link>
-              <Link href="/Services">
-                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
-                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
-                    Services
-                  </span>
-                </li>
-              </Link>
-              <Link href="/Success">
-                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
-                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
-                    Success Stories
-                  </span>
-                </li>
-              </Link>
-              <Link href="/Industries">
-                <li className="relative cursor-pointer hover:text-white transition whitespace-nowrap">
-                  <span className="relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 after:ease-in-out hover:after:w-[70%]">
-                    Industries
-                  </span>
-                </li>
-              </Link>
+              ))}
             </ul>
 
             {/* Desktop CTA Buttons */}
@@ -88,7 +107,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/partner"
-                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-sky-700 text-white rounded-full text-sm hover:from-sky-600 hover:to-sky-800 transition"
+                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition"
               >
                 Contact Us
               </Link>
@@ -106,6 +125,17 @@ export default function Navbar() {
                 <span className="block w-6 h-0.5 bg-gray-300"></span>
               </button>
             </div>
+
+            {/* Mega Dropdown */}
+            {activeMenu && (
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[85%] bg-[#111111] rounded-xl border border-[#222222] shadow-lg p-6 transition"
+                onMouseEnter={() => setActiveMenu(activeMenu)} // keep it open
+                onMouseLeave={() => setActiveMenu(null)} // only close when leaving the dropdown
+              >
+                {DROPDOWN}
+              </div>
+            )}
           </nav>
         </div>
       </header>
@@ -129,51 +159,17 @@ export default function Navbar() {
 
             {/* Mobile Menu Links */}
             <ul className="flex flex-col gap-4 text-lg font-medium text-gray-300">
-              <li>
-                <Link
-                  href="/dashboard"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/About"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
-                >
-                  About us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Services"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Success"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
-                >
-                  Success Stories
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/Industries"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
-                >
-                  Industries
-                </Link>
-              </li>
+              {NAV_ITEMS.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-2 py-2 cursor-pointer hover:text-white hover:bg-gray-800 rounded-md transition"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
 
             {/* Mobile CTA */}
@@ -188,7 +184,7 @@ export default function Navbar() {
               <Link
                 href="/partner"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-5 py-2 bg-red-600 text-white rounded-full text-sm hover:bg-red-700 transition text-center"
+                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition text-center"
               >
                 Contact Us
               </Link>
