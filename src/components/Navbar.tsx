@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/dist/client/components/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -20,9 +19,6 @@ export default function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  const router = useRouter();
-
-  // Dropdown mock data
   const NAV_ITEMS = [
     { name: 'Home', href: '/dashboard' },
     { name: 'About us', href: '/About' },
@@ -38,18 +34,8 @@ export default function Navbar() {
           <h4 className="text-white font-semibold mb-2">{item.name}</h4>
           <ul className="text-gray-300 space-y-1">
             <li>
-              <Link href="#" className="hover:text-white transition">
-                Feature A
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-white transition">
-                Feature B
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:text-white transition">
-                Learn More
+              <Link href={item.href} className="hover:text-white transition">
+                Go to {item.name}
               </Link>
             </li>
           </ul>
@@ -84,15 +70,13 @@ export default function Navbar() {
                   onMouseEnter={() => setActiveMenu(item.name)}
                   className="relative cursor-pointer whitespace-nowrap"
                 >
-                  <Link href={item.href}>
-                    <span
-                      className={`relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 hover:after:w-[70%] ${
-                        activeMenu === item.name ? 'text-white after:w-[70%]' : 'hover:text-white'
-                      }`}
-                    >
-                      {item.name}
-                    </span>
-                  </Link>
+                  <span
+                    className={`relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 hover:after:w-[70%] ${
+                      activeMenu === item.name ? 'text-white after:w-[70%]' : 'hover:text-white'
+                    }`}
+                  >
+                    {item.name}
+                  </span>
                 </li>
               ))}
             </ul>
@@ -107,7 +91,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/partner"
-                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition"
+                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full text-sm hover:from-sky-600 hover:to-blue-700 transition"
               >
                 Contact Us
               </Link>
@@ -130,10 +114,23 @@ export default function Navbar() {
             {activeMenu && (
               <div
                 className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[85%] bg-[#111111] rounded-xl border border-[#222222] shadow-lg p-6 transition"
-                onMouseEnter={() => setActiveMenu(activeMenu)} // keep it open
-                onMouseLeave={() => setActiveMenu(null)} // only close when leaving the dropdown
+                onMouseEnter={() => setActiveMenu(activeMenu)}
+                onMouseLeave={() => setActiveMenu(null)}
               >
-                {DROPDOWN}
+                <div className="grid grid-cols-3 gap-6">
+                  {NAV_ITEMS.map((item) => (
+                    <div key={item.name}>
+                      <h4 className="text-white font-semibold mb-2">{item.name}</h4>
+                      <ul className="text-gray-300 space-y-1">
+                        <li>
+                          <Link href={item.href} className="hover:text-white transition">
+                            Go to {item.name}
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </nav>
@@ -184,7 +181,7 @@ export default function Navbar() {
               <Link
                 href="/partner"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition text-center"
+                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full text-sm hover:from-sky-600 hover:to-blue-700 transition text-center"
               >
                 Contact Us
               </Link>
