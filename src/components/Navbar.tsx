@@ -1,54 +1,40 @@
 'use client';
 
+import { useRouter } from 'next/dist/client/components/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-  const [activeMenu, setActiveMenu] = React.useState<string | null>(null);
+  const [hoveredIndex, setHoveredIndex] = React.useState<number | null>(null);
+  const router = useRouter();
 
-  React.useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [mobileMenuOpen]);
-
+  // Dropdown mock data (add more content per item if needed)
   const NAV_ITEMS = [
-    { name: 'Home', href: '/dashboard' },
-    { name: 'About us', href: '/About' },
-    { name: 'Services', href: '/Services' },
-    { name: 'Success Stories', href: '/Success' },
-    { name: 'Industries', href: '/Industries' },
+    { name: 'Home', href: '/dashboard', dropdown: [{ label: 'Dashboard', href: '/dashboard' }] },
+    { name: 'About us', href: '/About', dropdown: [{ label: 'About Us', href: '/About' }] },
+    {
+      name: 'Services',
+      href: '/Services',
+      dropdown: [{ label: 'Services', href: '/Services' }],
+    },
+    {
+      name: 'Success Stories',
+      href: '/Success',
+      dropdown: [{ label: 'Success Stories', href: '/Success' }],
+    },
+    {
+      name: 'Industries',
+      href: '/Industries',
+      dropdown: [{ label: 'Industries', href: '/Industries' }],
+    },
   ];
-
-  const DROPDOWN = (
-    <div className="grid grid-cols-3 gap-6">
-      {NAV_ITEMS.map((item) => (
-        <div key={item.name}>
-          <h4 className="text-white font-semibold mb-2">{item.name}</h4>
-          <ul className="text-gray-300 space-y-1">
-            <li>
-              <Link href={item.href} className="hover:text-white transition">
-                Go to {item.name}
-              </Link>
-            </li>
-          </ul>
-        </div>
-      ))}
-    </div>
-  );
 
   return (
     <>
-      {/* Sticky Navbar */}
       <header className="fixed top-0 left-0 w-full flex justify-center bg-[#0f0f0f] z-50">
-        <div className="flex justify-center py-3 w-full md:w-[75vw]">
+        <div className="flex justify-center py-3 w-full md:w-[75vw] relative">
           <nav className="bg-[#111111] text-white rounded-full px-6 py-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] font-inter relative">
             {/* Logo */}
             <div className="flex items-center gap-2 flex-shrink-0">
@@ -62,36 +48,38 @@ export default function Navbar() {
               <span className="text-base font-medium">Trangla Innovations</span>
             </div>
 
-            {/* Desktop Menu */}
-            <ul className="hidden lg:flex items-center gap-8 text-gray-400 text-sm font-medium">
-              {NAV_ITEMS.map((item) => (
+            {/* Centered Menu */}
+            <ul className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center relative">
+              {NAV_ITEMS.map((item, idx) => (
                 <li
                   key={item.name}
-                  onMouseEnter={() => setActiveMenu(item.name)}
                   className="relative cursor-pointer whitespace-nowrap"
+                  onMouseEnter={() => setHoveredIndex(idx)}
+                  onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <span
-                    className={`relative after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-8px] after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 hover:after:w-[70%] ${
-                      activeMenu === item.name ? 'text-white after:w-[70%]' : 'hover:text-white'
+                  {/* Main Nav Item */}
+                  <div
+                    className={`relative px-4 py-4 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:h-[2px] after:w-0 after:bg-sky-500 after:transition-[width] after:duration-200 hover:after:w-[50%] hover:text-white select-none ${
+                      hoveredIndex === idx ? 'text-white' : ''
                     }`}
                   >
                     {item.name}
-                  </span>
+                  </div>
                 </li>
               ))}
             </ul>
 
-            {/* Desktop CTA Buttons */}
+            {/* CTA Buttons */}
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href="/JoinUs"
-                className="px-5 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition"
+                className="px-5 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition whitespace-nowrap flex-shrink-0"
               >
                 Join Us
               </Link>
               <Link
                 href="/partner"
-                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full text-sm hover:from-sky-600 hover:to-blue-700 transition"
+                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition whitespace-nowrap flex-shrink-0"
               >
                 Contact Us
               </Link>
@@ -109,31 +97,29 @@ export default function Navbar() {
                 <span className="block w-6 h-0.5 bg-gray-300"></span>
               </button>
             </div>
-
-            {/* Mega Dropdown */}
-            {activeMenu && (
-              <div
-                className="absolute left-1/2 -translate-x-1/2 top-full mt-3 w-[85%] bg-[#111111] rounded-xl border border-[#222222] shadow-lg p-6 transition"
-                onMouseEnter={() => setActiveMenu(activeMenu)}
-                onMouseLeave={() => setActiveMenu(null)}
-              >
-                <div className="grid grid-cols-3 gap-6">
-                  {NAV_ITEMS.map((item) => (
-                    <div key={item.name}>
-                      <h4 className="text-white font-semibold mb-2">{item.name}</h4>
-                      <ul className="text-gray-300 space-y-1">
-                        <li>
-                          <Link href={item.href} className="hover:text-white transition">
-                            Go to {item.name}
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </nav>
+
+          {/* Centered Dropdown */}
+          {hoveredIndex !== null && (
+            <div
+              className="absolute left-1/2 top-full z-50 -translate-x-1/2 w-[70%] bg-[#111111] border border-[#222222] rounded-xl shadow-lg p-4 -mt-3"
+              onMouseEnter={() => setHoveredIndex(hoveredIndex)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <ul className="text-gray-300 space-y-2">
+                {NAV_ITEMS[hoveredIndex].dropdown.map((drop, i) => (
+                  <li key={i}>
+                    <Link
+                      href={drop.href}
+                      className="block px-3 py-2 rounded hover:text-white hover:bg-gray-800 transition"
+                    >
+                      {drop.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </header>
 
@@ -181,7 +167,7 @@ export default function Navbar() {
               <Link
                 href="/partner"
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-5 py-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-full text-sm hover:from-sky-600 hover:to-blue-700 transition text-center"
+                className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition text-center"
               >
                 Contact Us
               </Link>
