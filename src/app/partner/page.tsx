@@ -62,7 +62,7 @@ const PartnerForm: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white px-4 font-inter">
+    <div className="min-h-screen pt-24 p-8 flex items-center justify-center bg-white px-4 font-inter ">
       <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl">
         {/* Left Section - Form */}
         <div className="w-full md:w-3/5 p-10 md:pr-16">

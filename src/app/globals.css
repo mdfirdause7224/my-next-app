@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =============== FONT FAMILIES =============== */
 @layer utilities {
   .font-geist-sans-serif {
     font-family: var(--font-geist-sans-serif);
@@ -15,4 +16,64 @@
   .font-roboto-mono {
     font-family: var(--font-roboto-mono);
   }
+}
+
+/* =============== MEEAMI-STYLE DROPDOWN EFFECTS =============== */
+@keyframes dropdown-fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-animate {
+  animation: dropdown-fade-slide 0.35s ease forwards;
+}
+
+.dropdown-shadow {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}
+
+.dropdown-border {
+  border: 1px solid #222;
+}
+
+.dropdown-link:hover {
+  background-color: #1a1a1a;
+}
+
+/* Smooth hover underline animation for menu items */
+.nav-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0ea5e9; /* sky-500 */
+  transform: translateX(-50%);
+  transition: width 0.25s ease;
+}
+.nav-underline:hover::after {
+  width: 50%;
+}
+
+/* Staggered animation for dropdown items */
+@keyframes dropdown-item-fade-slide {
+  0% {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item-animate {
+  animation: dropdown-item-fade-slide 0.35s ease forwards;
 }

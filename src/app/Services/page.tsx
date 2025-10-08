@@ -45,7 +45,7 @@ const services = [
 
 const HomeServices: React.FC = () => {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
+    <section className="pt-32 p-8 max-w-7xl mx-auto px-4 py-16">
       <div className="flex flex-col gap-16">
         {services.map((item, idx) => (
           <div
