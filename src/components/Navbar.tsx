@@ -86,25 +86,33 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Only set scrolled state on scroll; animation is handled in the effect below
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 50;
       setIsScrolled(scrolled);
-
-      // ✅ Only change background on scroll, no shrink or scale
-      controls.start({
-        backgroundColor: scrolled ? 'rgba(17,17,17,0.95)' : '#111111',
-        transition: { duration: 0.3, ease: 'easeInOut' },
-      });
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    // initialize
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [controls]);
+  }, []);
+
+  // Animate navbar width & background whenever scroll or hover state changes
+  useEffect(() => {
+    const targetWidth = isScrolled && !isHovered ? '15%' : '75%';
+    const targetBg = isScrolled ? 'rgba(17,17,17,0.95)' : '#111111';
+    controls.start({
+      width: targetWidth,
+      backgroundColor: targetBg,
+      transition: { duration: 0.35, ease: 'easeInOut' },
+    });
+  }, [isScrolled, isHovered, controls]);
 
   return (
     <header className="fixed top-0 left-0 w-full flex justify-center z-50 font-inter">
       <div
-        className="flex justify-center py-3 w-full md:w-[75vw] relative"
+        className="flex justify-center py-3 w-full relative"
         ref={dropdownRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
@@ -116,64 +124,63 @@ export default function Navbar() {
           animate={controls}
           initial={{
             backgroundColor: '#111111',
+            width: '75%',
           }}
           className="text-white rounded-full px-6 p-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] backdrop-blur-md transition-all duration-300"
         >
-          {/* ✅ Logo + Title (Title hides on scroll) */}
+          {/* Logo + Title */}
           <div
             className="flex items-center gap-2 flex-shrink-0 cursor-pointer"
             onClick={() => router.push('/')}
           >
             <Image src="/trangla_triangle.png" alt="Logo" width={28} height={28} />
             <motion.span
-              className="text-base font-medium whitespace-nowrap"
+              className="text-base font-medium whitespace-nowrap overflow-hidden"
               animate={{
                 opacity: isScrolled && !isHovered ? 0 : 1,
-                x: isScrolled && !isHovered ? -10 : 0,
-                transition: { duration: 0.3, ease: 'easeInOut' },
+                x: isScrolled && !isHovered ? -8 : 0,
+                width: isScrolled && !isHovered ? 0 : 'auto',
+                transition: { duration: 1.75, ease: 'easeInOut' },
               }}
             >
               Trangla Innovations
             </motion.span>
           </div>
 
-          {/* ✅ Center Navigation */}
+          {/* Center Navigation - hidden when collapsed */}
           <motion.ul
-            className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center relative"
+            className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center gap-4 flex-nowrap overflow-hidden relative"
             animate={{
               opacity: isScrolled && !isHovered ? 0 : 1,
-              y: isScrolled && !isHovered ? -10 : 0,
+              y: isScrolled && !isHovered ? -8 : 0,
               pointerEvents: isScrolled && !isHovered ? 'none' : 'auto',
-              transition: { duration: 0.3, ease: 'easeInOut' },
+              transition: { duration: 1.75, ease: 'easeInOut' },
             }}
           >
             {NAV_ITEMS.map((item, idx) => (
               <li
                 key={item.name}
-                className="relative select-none group"
+                className="relative select-none group flex-shrink-0"
                 onMouseEnter={() => setActiveDropdown(idx)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <div
-                  className={`relative px-4 py-4 cursor-pointer transition-colors ${
-                    activeDropdown === idx ? 'text-white' : 'hover:text-white'
-                  }`}
+                  className={`relative px-4 py-4 cursor-pointer transition-colors ${activeDropdown === idx ? 'text-white' : 'hover:text-white'
+                    }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-[50%] bg-sky-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center ${
-                      activeDropdown === idx ? 'scale-x-100' : ''
-                    }`}
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-[50%] bg-sky-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center ${activeDropdown === idx ? 'scale-x-100' : ''
+                      }`}
                   />
                 </div>
 
-                {/* ✅ Dropdown */}
+                {/* Dropdown */}
                 <div
-                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
-                    activeDropdown === idx
-                      ? 'opacity-100 visible translate-y-0'
-                      : 'opacity-0 invisible -translate-y-2'
-                  }`}
+                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${activeDropdown === idx
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible -translate-y-2'
+                    }`}
                 >
                   <div className="grid grid-cols-3 gap-6">
                     {splitIntoColumns(item.dropdown, 3).map((column, colIdx) => (
@@ -200,31 +207,34 @@ export default function Navbar() {
             ))}
           </motion.ul>
 
-          {/* ✅ Right CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
-            <motion.div
-              animate={{
+          {/* Right CTA Buttons - hidden when collapsed */}
+          <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+            {/* Join Us fades on scroll */}
+            <Link
+              href="/JoinUs"
+              className="border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition overflow-hidden"
+              style={{
                 opacity: isScrolled && !isHovered ? 0 : 1,
-                y: isScrolled && !isHovered ? -10 : 0,
-                transition: { duration: 0.3, ease: 'easeInOut' },
+                width: isScrolled && !isHovered ? 0 : 'auto',
+                padding: isScrolled && !isHovered ? '0px' : '0.5rem 1.25rem',
+                transform: isScrolled && !isHovered ? 'translateY(-8px)' : 'translateY(0)',
+                pointerEvents: isScrolled && !isHovered ? 'none' : 'auto',
+                transition: 'all 0.25s ease-in-out',
               }}
             >
-              <Link
-                href="/JoinUs"
-                className="px-5 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition"
-              >
-                Join Us
-              </Link>
-            </motion.div>
+              Join Us
+            </Link>
+
+            {/* Contact Us always visible */}
             <Link
               href="/partner"
-              className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition"
+              className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition flex-shrink-0"
             >
               Contact Us
             </Link>
           </div>
 
-          {/* ✅ Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle */}
           <div className="flex lg:hidden flex-1 justify-end">
             <button
               className="p-2 rounded hover:bg-gray-800"
@@ -238,7 +248,7 @@ export default function Navbar() {
           </div>
         </motion.nav>
 
-        {/* ✅ Mobile Menu */}
+        {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-start justify-end">
             <div className="w-3/4 max-w-xs bg-[#111111] h-full shadow-lg flex flex-col p-6 font-inter text-white">
