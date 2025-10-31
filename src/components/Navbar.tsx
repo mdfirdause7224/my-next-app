@@ -76,6 +76,7 @@ export default function Navbar() {
     );
   };
 
+  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -86,27 +87,41 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Only set scrolled state on scroll; animation is handled in the effect below
+  // Scroll effect only on desktop
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      setIsScrolled(scrolled);
+      if (window.innerWidth >= 1024) {
+        setIsScrolled(window.scrollY > 50);
+      } else {
+        setIsScrolled(false);
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    // initialize
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll); // handle orientation/resizing
+    handleScroll(); // initialize
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
   }, []);
 
-  // Animate navbar width & background whenever scroll or hover state changes
+  // Animate navbar width & background only on desktop
   useEffect(() => {
-    const targetWidth = isScrolled && !isHovered ? '15%' : '75%';
-    const targetBg = isScrolled ? 'rgba(17,17,17,0.95)' : '#111111';
-    controls.start({
-      width: targetWidth,
-      backgroundColor: targetBg,
-      transition: { duration: 0.35, ease: 'easeInOut' },
-    });
+    if (window.innerWidth >= 1024) {
+      const targetWidth = isScrolled && !isHovered ? '15%' : '75%';
+      const targetBg = isScrolled ? 'rgba(17,17,17,0.95)' : '#111111';
+      controls.start({
+        width: targetWidth,
+        backgroundColor: targetBg,
+        transition: { duration: 0.35, ease: 'easeInOut' },
+      });
+    } else {
+      controls.start({
+        width: '75%',
+        backgroundColor: '#111111',
+      });
+    }
   }, [isScrolled, isHovered, controls]);
 
   return (
@@ -147,7 +162,7 @@ export default function Navbar() {
             </motion.span>
           </div>
 
-          {/* Center Navigation - hidden when collapsed */}
+          {/* Center Navigation */}
           <motion.ul
             className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center gap-4 flex-nowrap overflow-hidden relative"
             animate={{
@@ -210,9 +225,8 @@ export default function Navbar() {
             ))}
           </motion.ul>
 
-          {/* Right CTA Buttons - hidden when collapsed */}
+          {/* Right CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-            {/* Join Us fades on scroll */}
             <Link
               href="/JoinUs"
               className="border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition overflow-hidden"
@@ -228,7 +242,6 @@ export default function Navbar() {
               Join Us
             </Link>
 
-            {/* Contact Us always visible */}
             <Link
               href="/partner"
               className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition flex-shrink-0"
