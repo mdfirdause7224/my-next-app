@@ -4,12 +4,16 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const controls = useAnimation();
 
   const NAV_ITEMS = [
     {
@@ -65,41 +69,84 @@ export default function Navbar() {
     },
   ];
 
-  // ✅ Fixed typing using generics instead of `any`
   const splitIntoColumns = <T,>(items: T[], columns: number): T[][] => {
     const perColumn = Math.ceil(items.length / columns);
-    const result: T[][] = [];
-    for (let i = 0; i < columns; i++) {
-      result.push(items.slice(i * perColumn, (i + 1) * perColumn));
-    }
-    return result;
+    return Array.from({ length: columns }, (_, i) =>
+      items.slice(i * perColumn, (i + 1) * perColumn)
+    );
   };
 
   useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
+    const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setActiveDropdown(null);
       }
-    }
+    };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 50;
+      setIsScrolled(scrolled);
+
+      // ✅ Only change background on scroll, no shrink or scale
+      controls.start({
+        backgroundColor: scrolled ? 'rgba(17,17,17,0.95)' : '#111111',
+        transition: { duration: 0.3, ease: 'easeInOut' },
+      });
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [controls]);
+
   return (
-    <header className="fixed top-0 left-0 w-full flex justify-center bg-[#0f0f0f] z-50 font-inter">
-      <div className="flex justify-center py-3 w-full md:w-[75vw] relative" ref={dropdownRef}>
-        <nav className="bg-[#111111] text-white rounded-full px-6 py-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222]">
-          {/* Logo */}
+    <header className="fixed top-0 left-0 w-full flex justify-center z-50 font-inter">
+      <div
+        className="flex justify-center py-3 w-full md:w-[75vw] relative"
+        ref={dropdownRef}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => {
+          setIsHovered(false);
+          setActiveDropdown(null);
+        }}
+      >
+        <motion.nav
+          animate={controls}
+          initial={{
+            backgroundColor: '#111111',
+          }}
+          className="text-white rounded-full px-6 p-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] backdrop-blur-md transition-all duration-300"
+        >
+          {/* ✅ Logo + Title (Title hides on scroll) */}
           <div
             className="flex items-center gap-2 flex-shrink-0 cursor-pointer"
             onClick={() => router.push('/')}
           >
             <Image src="/trangla_triangle.png" alt="Logo" width={28} height={28} />
-            <span className="text-base font-medium">Trangla Innovations</span>
+            <motion.span
+              className="text-base font-medium whitespace-nowrap"
+              animate={{
+                opacity: isScrolled && !isHovered ? 0 : 1,
+                x: isScrolled && !isHovered ? -10 : 0,
+                transition: { duration: 0.3, ease: 'easeInOut' },
+              }}
+            >
+              Trangla Innovations
+            </motion.span>
           </div>
 
-          {/* Desktop Menu */}
-          <ul className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center relative">
+          {/* ✅ Center Navigation */}
+          <motion.ul
+            className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center relative"
+            animate={{
+              opacity: isScrolled && !isHovered ? 0 : 1,
+              y: isScrolled && !isHovered ? -10 : 0,
+              pointerEvents: isScrolled && !isHovered ? 'none' : 'auto',
+              transition: { duration: 0.3, ease: 'easeInOut' },
+            }}
+          >
             {NAV_ITEMS.map((item, idx) => (
               <li
                 key={item.name}
@@ -107,14 +154,10 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveDropdown(idx)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {/* Main Nav Item */}
                 <div
                   className={`relative px-4 py-4 cursor-pointer transition-colors ${
                     activeDropdown === idx ? 'text-white' : 'hover:text-white'
                   }`}
-                  onClick={() =>
-                    setActiveDropdown(activeDropdown === idx ? null : idx)
-                  }
                 >
                   {item.name}
                   <span
@@ -124,9 +167,9 @@ export default function Navbar() {
                   />
                 </div>
 
-                {/* Centered Dropdown */}
+                {/* ✅ Dropdown */}
                 <div
-                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 mt-3 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
+                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
                     activeDropdown === idx
                       ? 'opacity-100 visible translate-y-0'
                       : 'opacity-0 invisible -translate-y-2'
@@ -155,16 +198,24 @@ export default function Navbar() {
                 </div>
               </li>
             ))}
-          </ul>
+          </motion.ul>
 
-          {/* CTA Buttons */}
+          {/* ✅ Right CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="/JoinUs"
-              className="px-5 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition"
+            <motion.div
+              animate={{
+                opacity: isScrolled && !isHovered ? 0 : 1,
+                y: isScrolled && !isHovered ? -10 : 0,
+                transition: { duration: 0.3, ease: 'easeInOut' },
+              }}
             >
-              Join Us
-            </Link>
+              <Link
+                href="/JoinUs"
+                className="px-5 py-2 border border-white text-white rounded-full text-sm hover:bg-white hover:text-black transition"
+              >
+                Join Us
+              </Link>
+            </motion.div>
             <Link
               href="/partner"
               className="px-5 py-2 bg-sky-500 text-white rounded-full text-sm hover:bg-sky-600 transition"
@@ -173,7 +224,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* ✅ Mobile Menu Toggle */}
           <div className="flex lg:hidden flex-1 justify-end">
             <button
               className="p-2 rounded hover:bg-gray-800"
@@ -185,12 +236,9 @@ export default function Navbar() {
               <span className="block w-6 h-0.5 bg-gray-300"></span>
             </button>
           </div>
-        </nav>
+        </motion.nav>
 
-        {/* Spacer */}
-        <div className="h-20"></div>
-
-        {/* Mobile Menu */}
+        {/* ✅ Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-start justify-end">
             <div className="w-3/4 max-w-xs bg-[#111111] h-full shadow-lg flex flex-col p-6 font-inter text-white">
