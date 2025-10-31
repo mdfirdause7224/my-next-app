@@ -48,7 +48,7 @@
 
 /* Smooth hover underline animation for menu items */
 .nav-underline::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 50%;
   bottom: 0;
