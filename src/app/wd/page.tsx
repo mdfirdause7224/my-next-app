@@ -5,13 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 // Reusable fade-in section with delay and smooth animation
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -62,7 +56,8 @@ export default function WdPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.2 }}
           >
-            Empowering your business with high-performance, scalable, and visually striking web applications built for growth.
+            Empowering your business with high-performance, scalable, and visually striking web
+            applications built for growth.
           </motion.p>
         </section>
       </FadeInSection>
@@ -72,9 +67,10 @@ export default function WdPage() {
         <section className="max-w-5xl mx-auto mb-16">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Our <span className="font-semibold">Web Development Services</span> are dedicated to crafting
-            high-performing, user-focused digital solutions that enhance brand value and boost conversions.
-            We focus on clean code, modern technologies, and smooth UI/UX that scales effortlessly across all platforms.
+            Our <span className="font-semibold">Web Development Services</span> are dedicated to
+            crafting high-performing, user-focused digital solutions that enhance brand value and
+            boost conversions. We focus on clean code, modern technologies, and smooth UI/UX that
+            scales effortlessly across all platforms.
           </p>
         </section>
       </FadeInSection>
@@ -118,9 +114,7 @@ export default function WdPage() {
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                 className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -163,7 +157,10 @@ export default function WdPage() {
             {[
               ['Discovery', 'Understanding client needs, goals, and audience.'],
               ['Design', 'Creating wireframes, UI/UX mockups, and user flows.'],
-              ['Development', 'Building responsive and optimized websites using modern frameworks.'],
+              [
+                'Development',
+                'Building responsive and optimized websites using modern frameworks.',
+              ],
               ['Testing', 'Ensuring performance, accessibility, and security across all browsers.'],
               ['Launch', 'Smooth deployment on reliable hosting environments.'],
               ['Maintenance', 'Continuous updates and technical support post-launch.'],

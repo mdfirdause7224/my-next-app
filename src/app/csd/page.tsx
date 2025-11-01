@@ -5,13 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 // Reusable animation wrapper with delayed activation for smoother page load
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -62,7 +56,8 @@ export default function CsdPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.2 }}
           >
-            Transform your ideas into exceptional digital experiences through custom website design and development made just for your brand.
+            Transform your ideas into exceptional digital experiences through custom website design
+            and development made just for your brand.
           </motion.p>
         </section>
       </FadeInSection>
@@ -72,12 +67,11 @@ export default function CsdPage() {
         <section className="max-w-5xl mx-auto mb-16">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Our <span className="font-semibold">Custom Site Development</span>{' '}
-            approach is focused on building distinctive, scalable, and
-            high-performing websites that reflect your brand identity. We don’t
-            use pre-made templates — every pixel, line of code, and animation is
-            purposefully created to deliver an experience that is both
-            functional and visually captivating across all devices.
+            Our <span className="font-semibold">Custom Site Development</span> approach is focused
+            on building distinctive, scalable, and high-performing websites that reflect your brand
+            identity. We don’t use pre-made templates — every pixel, line of code, and animation is
+            purposefully created to deliver an experience that is both functional and visually
+            captivating across all devices.
           </p>
         </section>
       </FadeInSection>
@@ -85,9 +79,7 @@ export default function CsdPage() {
       {/* Key Features */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            What We Deliver
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8">What We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -121,9 +113,7 @@ export default function CsdPage() {
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                 className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -134,9 +124,7 @@ export default function CsdPage() {
       {/* Tech Stack */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Technology Stack
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technology Stack</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
               ['Frontend', 'Next.js, React.js, TypeScript, Tailwind CSS'],
@@ -163,14 +151,15 @@ export default function CsdPage() {
       {/* Process */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Our Development Process
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Our Development Process</h2>
           <ol className="space-y-4 text-gray-700 leading-relaxed list-decimal list-inside text-lg">
             {[
               ['Requirement Analysis', 'Understanding your goals, brand, and target audience.'],
               ['Wireframe & Design', 'Creating user-centered UI/UX prototypes and design flows.'],
-              ['Development', 'Building with Next.js, TypeScript, and Tailwind CSS for performance and flexibility.'],
+              [
+                'Development',
+                'Building with Next.js, TypeScript, and Tailwind CSS for performance and flexibility.',
+              ],
               ['Testing', 'Ensuring speed, security, and cross-browser compatibility.'],
               ['Launch', 'Deploying seamlessly on reliable and secure infrastructure.'],
               ['Maintenance', 'Ongoing updates and optimization for long-term success.'],
@@ -191,9 +180,7 @@ export default function CsdPage() {
       {/* Why Choose Us */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-24">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Why Choose Us
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Why Choose Us</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg">
             {[
               'Fully custom-coded websites — no templates or themes.',

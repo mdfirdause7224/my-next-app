@@ -5,13 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 // Reusable fade-in animation section with slight delay
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -62,9 +56,9 @@ export default function SdhPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.1, delay: 0.2 }}
           >
-            At <span className="text-blue-600 font-semibold">Trangla</span>, we
-            turn ideas into impactful digital experiences — crafted through
-            innovative design, modern technology, and result-driven strategy.
+            At <span className="text-blue-600 font-semibold">Trangla</span>, we turn ideas into
+            impactful digital experiences — crafted through innovative design, modern technology,
+            and result-driven strategy.
           </motion.p>
         </section>
       </FadeInSection>
@@ -72,15 +66,12 @@ export default function SdhPage() {
       {/* Overview */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-16">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Overview
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Our team of designers and developers collaborate to bring your ideas
-            to life through thoughtful, client-oriented design and software
-            development. From websites and mobile apps to enterprise systems,
-            branding, UI/UX, and marketing — we deliver end-to-end digital
-            solutions to help your business thrive in the modern digital world.
+            Our team of designers and developers collaborate to bring your ideas to life through
+            thoughtful, client-oriented design and software development. From websites and mobile
+            apps to enterprise systems, branding, UI/UX, and marketing — we deliver end-to-end
+            digital solutions to help your business thrive in the modern digital world.
           </p>
         </section>
       </FadeInSection>
@@ -88,9 +79,7 @@ export default function SdhPage() {
       {/* Our Expertise */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            Our Expertise
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8">Our Expertise</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -124,9 +113,7 @@ export default function SdhPage() {
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                 className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -137,9 +124,7 @@ export default function SdhPage() {
       {/* Development Process */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Our Development Process
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Our Development Process</h2>
           <ol className="space-y-4 text-gray-700 leading-relaxed list-decimal list-inside text-lg">
             {[
               ['Requirement Analysis', 'Understanding your goals and business needs.'],
@@ -165,9 +150,7 @@ export default function SdhPage() {
       {/* Technologies */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Technologies We Use
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technologies We Use</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
               ['Frontend', 'React.js, Next.js, Vue.js, Angular'],
@@ -194,9 +177,7 @@ export default function SdhPage() {
       {/* Why Choose Trangla */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-24">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Why Choose Trangla
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Why Choose Trangla</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg">
             {[
               'Experienced and multidisciplinary development team.',

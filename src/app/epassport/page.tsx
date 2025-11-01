@@ -57,7 +57,8 @@ export default function EpassportStory() {
               ePassport User Verification System
             </motion.h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              A secure, end-to-end digital identity solution transforming manual document checks into an intelligent, automated verification system.
+              A secure, end-to-end digital identity solution transforming manual document checks
+              into an intelligent, automated verification system.
             </p>
           </div>
         </FadeInSection>
@@ -67,7 +68,9 @@ export default function EpassportStory() {
           <section>
             <h2 className="text-2xl font-semibold mb-3">Elevator Pitch</h2>
             <p className="text-gray-600 leading-relaxed">
-              We engineered a secure platform that digitizes document verification — eliminating manual review delays and ensuring fast, accurate user authentication for sensitive services.
+              We engineered a secure platform that digitizes document verification — eliminating
+              manual review delays and ensuring fast, accurate user authentication for sensitive
+              services.
             </p>
           </section>
         </FadeInSection>
@@ -77,7 +80,9 @@ export default function EpassportStory() {
           <section>
             <h2 className="text-2xl font-semibold mb-3">The Challenge</h2>
             <p className="text-gray-600 leading-relaxed">
-              Traditional onboarding is slow, error-prone, and resource-heavy. Manual verification of IDs and proofs of address not only delays access but also introduces security risks and administrative load.
+              Traditional onboarding is slow, error-prone, and resource-heavy. Manual verification
+              of IDs and proofs of address not only delays access but also introduces security risks
+              and administrative load.
             </p>
           </section>
         </FadeInSection>
@@ -87,7 +92,8 @@ export default function EpassportStory() {
           <section>
             <h2 className="text-2xl font-semibold mb-3">Our Solution</h2>
             <p className="text-gray-600 leading-relaxed">
-              We built a full-stack web application that simplifies registration, automates document validation, and empowers administrators with intuitive tools for secure verification.
+              We built a full-stack web application that simplifies registration, automates document
+              validation, and empowers administrators with intuitive tools for secure verification.
             </p>
           </section>
         </FadeInSection>
@@ -135,7 +141,8 @@ export default function EpassportStory() {
               <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
                 <h3 className="font-semibold text-gray-800">5. Foundation for Growth</h3>
                 <p className="text-gray-600 mt-2">
-                  Delivered a scalable, compliant system designed for internal and future external deployments.
+                  Delivered a scalable, compliant system designed for internal and future external
+                  deployments.
                 </p>
               </div>
             </div>
@@ -151,7 +158,10 @@ export default function EpassportStory() {
                 { icon: <SiNextdotjs className="text-4xl text-gray-900" />, name: 'Next.js' },
                 { icon: <SiTypescript className="text-4xl text-blue-600" />, name: 'TypeScript' },
                 { icon: <SiTailwindcss className="text-4xl text-sky-500" />, name: 'Tailwind CSS' },
-                { icon: <SiPostgresql className="text-4xl text-blue-700" />, name: 'Vercel Postgres' },
+                {
+                  icon: <SiPostgresql className="text-4xl text-blue-700" />,
+                  name: 'Vercel Postgres',
+                },
                 { icon: <SiAuth0 className="text-4xl text-amber-500" />, name: 'NextAuth.js' },
                 { icon: <SiVercel className="text-4xl text-gray-800" />, name: 'Vercel' },
               ].map((tech, index) => (
@@ -178,7 +188,8 @@ export default function EpassportStory() {
               transition={{ duration: 1 }}
               className="text-lg italic text-gray-700 max-w-3xl mx-auto"
             >
-              “This project bridges the gap between rigorous security and exceptional user experience — delivering a future-proof digital identity solution.”
+              “This project bridges the gap between rigorous security and exceptional user
+              experience — delivering a future-proof digital identity solution.”
             </motion.p>
           </section>
         </FadeInSection>

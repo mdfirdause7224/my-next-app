@@ -5,13 +5,7 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 // Reusable animation section with smooth in-view transitions
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -66,8 +60,8 @@ export default function MadPage() {
             <span className="text-blue-600 font-semibold">React Native</span>,{' '}
             <span className="text-blue-600 font-semibold">Flutter</span>,{' '}
             <span className="text-blue-600 font-semibold">Swift</span>, and{' '}
-            <span className="text-blue-600 font-semibold">Kotlin</span>. We build apps that
-            connect brands with their audiences—fast, reliable, and scalable.
+            <span className="text-blue-600 font-semibold">Kotlin</span>. We build apps that connect
+            brands with their audiences—fast, reliable, and scalable.
           </motion.p>
         </section>
       </FadeInSection>
@@ -77,10 +71,11 @@ export default function MadPage() {
         <section className="max-w-5xl mx-auto mb-16">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed text-lg">
-            Our <span className="font-semibold">Mobile Application Development</span> service delivers
-            tailor-made mobile solutions that help businesses thrive in the digital space. From intuitive UI/UX
-            design to backend integration and post-launch support, we focus on delivering smooth, scalable,
-            and high-performing apps for both iOS and Android platforms.
+            Our <span className="font-semibold">Mobile Application Development</span> service
+            delivers tailor-made mobile solutions that help businesses thrive in the digital space.
+            From intuitive UI/UX design to backend integration and post-launch support, we focus on
+            delivering smooth, scalable, and high-performing apps for both iOS and Android
+            platforms.
           </p>
         </section>
       </FadeInSection>
@@ -88,9 +83,7 @@ export default function MadPage() {
       {/* Key Services */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">
-            What We Deliver
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-8">What We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
@@ -124,9 +117,7 @@ export default function MadPage() {
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                 className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               >
-                <h3 className="text-lg font-semibold text-blue-600 mb-2">
-                  {item.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-blue-600 mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.desc}</p>
               </motion.div>
             ))}
@@ -137,9 +128,7 @@ export default function MadPage() {
       {/* Technology Stack */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Technology Stack
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technology Stack</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
               ['Cross-Platform', 'React Native, Flutter'],
@@ -166,9 +155,7 @@ export default function MadPage() {
       {/* Process */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Our Development Process
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Our Development Process</h2>
           <ol className="space-y-4 text-gray-700 leading-relaxed list-decimal list-inside text-lg">
             {[
               ['Research & Planning', 'Understanding your users, competitors, and business goals.'],
@@ -194,9 +181,7 @@ export default function MadPage() {
       {/* Why Choose Us */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-24">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">
-            Why Choose Us
-          </h2>
+          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Why Choose Us</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg">
             {[
               'Expert mobile developers with deep native and cross-platform experience.',

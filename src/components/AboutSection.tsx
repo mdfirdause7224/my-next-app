@@ -29,9 +29,18 @@ export default function AboutSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
         >
-          Welcome to Trangla – We are a team of expert designers and developers.
-          We work on platforms like <strong>iOS, Android, React JS, React Native, Vue JS, NodeJS, MongoDB, MySQL, AWS, AngularJS, Angular Native, Cordova, Phonegap, Ionic</strong> etc. We build top-notch websites and web applications and also work on
-          <strong> logo design, corporate branding, web design, web development, graphic design</strong> and <strong>digital marketing services.</strong>
+          Welcome to Trangla – We are a team of expert designers and developers. We work on
+          platforms like{' '}
+          <strong>
+            iOS, Android, React JS, React Native, Vue JS, NodeJS, MongoDB, MySQL, AWS, AngularJS,
+            Angular Native, Cordova, Phonegap, Ionic
+          </strong>{' '}
+          etc. We build top-notch websites and web applications and also work on
+          <strong>
+            {' '}
+            logo design, corporate branding, web design, web development, graphic design
+          </strong>{' '}
+          and <strong>digital marketing services.</strong>
         </motion.p>
 
         {/* Animated Secondary Text */}
@@ -41,9 +50,9 @@ export default function AboutSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          A well-regarded Branding & Development agency, Trangla has years of experience
-          working with companies across various industries. This enables us to empower you
-          with the best digital practices that ensure what we deliver drives your business effectively.
+          A well-regarded Branding & Development agency, Trangla has years of experience working
+          with companies across various industries. This enables us to empower you with the best
+          digital practices that ensure what we deliver drives your business effectively.
         </motion.p>
 
         {/* Contact Button */}
