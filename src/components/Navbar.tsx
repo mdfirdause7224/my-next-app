@@ -17,15 +17,6 @@ export default function Navbar() {
 
   const NAV_ITEMS = [
     {
-      name: 'Home',
-      href: '/dashboard',
-      dropdown: [
-        { label: 'Home', href: '/dashboard' },
-        { label: 'Latest Updates', href: '/updates' },
-        { label: 'Newsroom', href: '/newsroom' },
-      ],
-    },
-    {
       name: 'About Us',
       href: '/About',
       dropdown: [
@@ -39,18 +30,17 @@ export default function Navbar() {
       name: 'Services',
       href: '/Services',
       dropdown: [
-        { label: 'Services', href: '/Services' },
-        { label: 'Echo Cancellation', href: '/echo-cancellation' },
-        { label: 'Beamforming', href: '/beamforming' },
-        { label: 'Voice Enhancement', href: '/voice-enhancement' },
-        { label: 'Speaker Separation', href: '/speaker-separation' },
+        { label: 'Software developer hearing', href: '/sdh' },
+        { label: 'Web development', href: '/wd' },
+        { label: 'Mobile application development', href: '/mad' },
+        { label: 'Custom site development', href: '/csd' },
       ],
     },
     {
       name: 'Success Stories',
       href: '/Success',
       dropdown: [
-        { label: 'Success Stories', href: '/Success' },
+        { label: 'ePassport User Verification System', href: '/epassport' },
         { label: 'Automotive Voice AI', href: '/automotive' },
         { label: 'Healthcare Voice Analysis', href: '/healthcare' },
         { label: 'Smart Device Integrations', href: '/smart-devices' },
@@ -60,11 +50,10 @@ export default function Navbar() {
       name: 'Industries',
       href: '/Industries',
       dropdown: [
-        { label: 'Industries', href: '/Industries' },
-        { label: 'Consumer Electronics', href: '/electronics' },
-        { label: 'Telecom & BPO', href: '/bpo' },
-        { label: 'Healthcare', href: '/healthcare' },
-        { label: 'Software & SaaS', href: '/software' },
+        { label: 'Software developer hearing', href: '/sdh' },
+        { label: 'Web development', href: '/wd' },
+        { label: 'Mobile application development', href: '/mad' },
+        { label: 'Custom site development', href: '/csd' },
       ],
     },
   ];
@@ -76,7 +65,6 @@ export default function Navbar() {
     );
   };
 
-  // Close dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -87,7 +75,6 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Scroll effect only on desktop
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth >= 1024) {
@@ -96,20 +83,18 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll); // handle orientation/resizing
-    handleScroll(); // initialize
+    window.addEventListener('resize', handleScroll);
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
-  // Animate navbar width & background only on desktop
   useEffect(() => {
     if (window.innerWidth >= 1024) {
-      const targetWidth = isScrolled && !isHovered ? '15%' : '75%';
+      const targetWidth = isScrolled && !isHovered ? '15%' : '70%';
       const targetBg = isScrolled ? 'rgba(17,17,17,0.95)' : '#111111';
       controls.start({
         width: targetWidth,
@@ -118,7 +103,7 @@ export default function Navbar() {
       });
     } else {
       controls.start({
-        width: '75%',
+        width: '70%',
         backgroundColor: '#111111',
       });
     }
@@ -139,7 +124,7 @@ export default function Navbar() {
           animate={controls}
           initial={{
             backgroundColor: '#111111',
-            width: '75%',
+            width: '70%',
           }}
           className="text-white rounded-full px-6 p-3 w-[90%] max-w-7xl flex items-center justify-between shadow-md border border-[#222222] backdrop-blur-md transition-all duration-300"
         >
@@ -162,7 +147,7 @@ export default function Navbar() {
             </motion.span>
           </div>
 
-          {/* Center Navigation */}
+          {/* Desktop Navigation */}
           <motion.ul
             className="hidden lg:flex items-center text-gray-400 text-sm font-medium flex-1 justify-center gap-4 flex-nowrap overflow-hidden relative"
             animate={{
@@ -225,7 +210,7 @@ export default function Navbar() {
             ))}
           </motion.ul>
 
-          {/* Right CTA Buttons */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <Link
               href="/JoinUs"
@@ -267,31 +252,88 @@ export default function Navbar() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-start justify-end">
-            <div className="w-3/4 max-w-xs bg-[#111111] h-full shadow-lg flex flex-col p-6 font-inter text-white">
+            <div className="w-3/4 max-w-xs bg-[#111111] h-full shadow-lg flex flex-col p-6 font-inter text-white relative overflow-hidden">
               <button
                 className="self-end mb-6 p-2 rounded hover:bg-gray-800"
                 aria-label="Close mobile menu"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  setActiveDropdown(null);
+                }}
               >
                 <span className="block w-6 h-0.5 bg-white rotate-45 translate-y-1.5"></span>
                 <span className="block w-6 h-0.5 bg-white -rotate-45 -translate-y-1.5 -mt-1"></span>
               </button>
 
-              <ul className="flex flex-col gap-4 text-lg font-medium text-gray-300">
-                {NAV_ITEMS.map((item) => (
+              {/* Main Menu */}
+              <motion.ul
+                className={`flex flex-col gap-4 text-lg font-medium text-gray-300 transition-transform duration-300 ${
+                  activeDropdown === null ? 'translate-x-0' : '-translate-x-full'
+                }`}
+              >
+                {NAV_ITEMS.map((item, idx) => (
                   <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-2 py-2 hover:text-white hover:bg-gray-800 rounded-md transition"
-                    >
-                      {item.name}
-                    </Link>
+                    {['Services', 'Success Stories'].includes(item.name) ? (
+                      <button
+                        onClick={() => setActiveDropdown(idx)}
+                        className="block w-full text-left px-2 py-2 hover:text-white hover:bg-gray-800 rounded-md transition"
+                      >
+                        {item.name} →
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-2 py-2 hover:text-white hover:bg-gray-800 rounded-md transition"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
-              </ul>
+              </motion.ul>
 
-              <div className="mt-8 flex flex-col gap-3">
+              {/* Submenu (Services / Success Stories) */}
+              {activeDropdown !== null && (
+                <motion.div
+                  initial={{ x: '100%' }}
+                  animate={{ x: 0 }}
+                  exit={{ x: '100%' }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute top-0 left-0 w-full h-full bg-[#111111] p-6 flex flex-col"
+                >
+                  <button
+                    onClick={() => setActiveDropdown(null)}
+                    className="text-sm text-gray-400 hover:text-white mb-4 flex items-center gap-1"
+                  >
+                    ← Back
+                  </button>
+                  <h3 className="text-lg font-semibold text-white mb-4">
+                    {NAV_ITEMS[activeDropdown].name}
+                  </h3>
+
+                  <div className="flex flex-col gap-3">
+                    {NAV_ITEMS[activeDropdown].dropdown.map((drop, i) => (
+                      <Link
+                        key={i}
+                        href={drop.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="group flex flex-col px-3 py-2 rounded-md hover:bg-[#1a1a1a] transition-all"
+                      >
+                        <span className="text-gray-300 group-hover:text-white text-sm font-medium">
+                          {drop.label}
+                        </span>
+                        <span className="text-xs text-gray-500 mt-1">
+                          Learn more about {drop.label}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Bottom CTA Buttons */}
+              <div className="mt-auto flex flex-col gap-3 pt-6">
                 <Link
                   href="/JoinUs"
                   onClick={() => setMobileMenuOpen(false)}
