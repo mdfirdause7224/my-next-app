@@ -7,13 +7,7 @@ import { FaReact, FaNodeJs } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiFigma } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -28,12 +22,7 @@ function FadeInSection({
   }, [controls, inView, delay]);
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 40 }}
-      animate={controls}
-      className="w-full"
-    >
+    <motion.div ref={ref} initial={{ opacity: 0, y: 40 }} animate={controls} className="w-full">
       {children}
     </motion.div>
   );
@@ -53,8 +42,8 @@ export default function SuccessStoryZaggle() {
               <span className="text-blue-600">Zaggle</span> – Hotel Booking System
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              A next-generation booking platform designed for fast, seamless, and reliable hotel reservations — 
-              bringing comfort and convenience to every traveler’s journey.
+              A next-generation booking platform designed for fast, seamless, and reliable hotel
+              reservations — bringing comfort and convenience to every traveler’s journey.
             </p>
           </div>
         </FadeInSection>
@@ -62,13 +51,12 @@ export default function SuccessStoryZaggle() {
         {/* Overview */}
         <FadeInSection delay={0.2}>
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg border border-blue-100 p-10 hover:shadow-xl transition">
-            <h3 className="text-2xl font-semibold mb-4 text-blue-700">
-              Project Overview
-            </h3>
+            <h3 className="text-2xl font-semibold mb-4 text-blue-700">Project Overview</h3>
             <p className="text-gray-700 leading-relaxed">
-              Zaggle is a sleek, intuitive hotel booking platform created to help users find and reserve accommodations
-              effortlessly. Built for speed and scalability, it allows users to search, filter, and book hotels in real-time,
-              offering rich details, smart filters, and a seamless cross-device experience.
+              Zaggle is a sleek, intuitive hotel booking platform created to help users find and
+              reserve accommodations effortlessly. Built for speed and scalability, it allows users
+              to search, filter, and book hotels in real-time, offering rich details, smart filters,
+              and a seamless cross-device experience.
             </p>
           </div>
         </FadeInSection>
@@ -79,16 +67,18 @@ export default function SuccessStoryZaggle() {
             <div className="bg-white rounded-3xl shadow-md border border-blue-100 p-10 hover:shadow-lg hover:-translate-y-1 transition-transform">
               <h3 className="text-2xl font-semibold text-blue-700 mb-4">Challenge</h3>
               <p className="text-gray-700 leading-relaxed">
-                The client needed a high-performance booking system capable of handling large-scale user activity while
-                maintaining real-time availability, effortless navigation, and a premium design across devices.
+                The client needed a high-performance booking system capable of handling large-scale
+                user activity while maintaining real-time availability, effortless navigation, and a
+                premium design across devices.
               </p>
             </div>
             <div className="bg-white rounded-3xl shadow-md border border-blue-100 p-10 hover:shadow-lg hover:-translate-y-1 transition-transform">
               <h3 className="text-2xl font-semibold text-blue-700 mb-4">Our Approach</h3>
               <p className="text-gray-700 leading-relaxed">
-                Our team adopted a component-driven architecture using React.js and TypeScript, with Tailwind CSS for
-                rapid styling and Figma as the design foundation. REST APIs powered real-time data, while a mobile-first
-                approach ensured seamless responsiveness and accessibility.
+                Our team adopted a component-driven architecture using React.js and TypeScript, with
+                Tailwind CSS for rapid styling and Figma as the design foundation. REST APIs powered
+                real-time data, while a mobile-first approach ensured seamless responsiveness and
+                accessibility.
               </p>
             </div>
           </div>
@@ -99,11 +89,21 @@ export default function SuccessStoryZaggle() {
           <div className="bg-white/90 rounded-3xl shadow-lg border border-blue-100 p-10 md:p-14">
             <h3 className="text-2xl font-semibold text-blue-700 mb-6">Key Highlights</h3>
             <ul className="space-y-3 text-gray-700 list-disc list-inside">
-              <li>Implemented a complete hotel search, details, and booking workflow from Figma design specs.</li>
-              <li>Integrated REST APIs for real-time listings, availability, and booking confirmations.</li>
-              <li>Developed smart filters and sorting mechanisms for personalized user experiences.</li>
+              <li>
+                Implemented a complete hotel search, details, and booking workflow from Figma design
+                specs.
+              </li>
+              <li>
+                Integrated REST APIs for real-time listings, availability, and booking
+                confirmations.
+              </li>
+              <li>
+                Developed smart filters and sorting mechanisms for personalized user experiences.
+              </li>
               <li>Ensured fully responsive, mobile-first layouts with blazing-fast performance.</li>
-              <li>Enhanced UX with micro-animations, clean navigation, and robust error handling.</li>
+              <li>
+                Enhanced UX with micro-animations, clean navigation, and robust error handling.
+              </li>
               <li>Integrated secure payment flow and automated email confirmations.</li>
             </ul>
           </div>

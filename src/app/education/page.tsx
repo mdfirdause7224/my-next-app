@@ -30,7 +30,8 @@ export default function EducationCaseStudy() {
             Digital Evolution in Education & E-Learning
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            Transforming traditional learning into immersive, data-driven, and accessible digital experiences.
+            Transforming traditional learning into immersive, data-driven, and accessible digital
+            experiences.
           </p>
         </div>
       </FadeInSection>
@@ -41,9 +42,9 @@ export default function EducationCaseStudy() {
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
             Our client — a national education group — wanted to transition from in-person training
-            to a fully digital learning ecosystem. Their goal was to create a modern platform
-            that supports interactive learning, personalized progress tracking, and virtual classroom collaboration
-            for thousands of students across regions.
+            to a fully digital learning ecosystem. Their goal was to create a modern platform that
+            supports interactive learning, personalized progress tracking, and virtual classroom
+            collaboration for thousands of students across regions.
           </p>
         </section>
       </FadeInSection>
@@ -78,10 +79,10 @@ export default function EducationCaseStudy() {
         <section className="mt-20 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            We built a next-generation <strong>Education & E-Learning platform</strong> designed to deliver
-            personalized, interactive, and scalable digital learning. By integrating powerful features like
-            AI-based assessments, real-time collaboration tools, and student analytics dashboards,
-            we enabled a seamless virtual learning experience.
+            We built a next-generation <strong>Education & E-Learning platform</strong> designed to
+            deliver personalized, interactive, and scalable digital learning. By integrating
+            powerful features like AI-based assessments, real-time collaboration tools, and student
+            analytics dashboards, we enabled a seamless virtual learning experience.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">

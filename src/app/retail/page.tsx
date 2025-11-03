@@ -3,13 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
-import {
-  FaShoppingCart,
-  FaWarehouse,
-  FaChartLine,
-  FaUsers,
-  FaMobileAlt,
-} from 'react-icons/fa';
+import { FaShoppingCart, FaWarehouse, FaChartLine, FaUsers, FaMobileAlt } from 'react-icons/fa';
 import { MdPayment } from 'react-icons/md';
 
 function FadeInSection({ children }: { children: React.ReactNode }) {
@@ -47,10 +41,10 @@ export default function RetailCaseStudy() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client, a mid-sized retail brand with both physical and online presence,
-            wanted to unify their inventory, sales, and customer engagement systems.
-            They aimed to scale rapidly, enhance user experience, and gain real-time visibility
-            into sales performance across channels.
+            Our client, a mid-sized retail brand with both physical and online presence, wanted to
+            unify their inventory, sales, and customer engagement systems. They aimed to scale
+            rapidly, enhance user experience, and gain real-time visibility into sales performance
+            across channels.
           </p>
         </section>
       </FadeInSection>
@@ -87,8 +81,8 @@ export default function RetailCaseStudy() {
           <p className="text-gray-700 leading-relaxed mb-6">
             We built a custom <strong>omnichannel retail management platform</strong> integrating
             inventory control, POS systems, e-commerce storefront, and customer engagement modules.
-            The solution provides a seamless shopping experience while enabling business intelligence
-            through advanced analytics.
+            The solution provides a seamless shopping experience while enabling business
+            intelligence through advanced analytics.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -169,8 +163,8 @@ export default function RetailCaseStudy() {
         <section className="mt-20 text-center bg-gradient-to-r from-blue-600 to-blue-500 text-white p-12 rounded-3xl">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Retail Experience?</h2>
           <p className="max-w-2xl mx-auto mb-6">
-            Let’s build intelligent, scalable, and customer-centric e-commerce solutions that
-            drive growth and deliver unmatched shopping experiences.
+            Let’s build intelligent, scalable, and customer-centric e-commerce solutions that drive
+            growth and deliver unmatched shopping experiences.
           </p>
           <Link href="/partner">
             <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full hover:bg-gray-100 transition">

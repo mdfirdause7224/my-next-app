@@ -30,7 +30,8 @@ export default function HealthcareCaseStudy() {
             Digital Transformation in Healthcare & eHealth
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            Building smarter, secure, and patient-first healthcare ecosystems through digital innovation.
+            Building smarter, secure, and patient-first healthcare ecosystems through digital
+            innovation.
           </p>
         </div>
       </FadeInSection>
@@ -40,10 +41,11 @@ export default function HealthcareCaseStudy() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client — a mid-sized healthcare organization — aimed to modernize its patient management
-            system and improve accessibility of healthcare services for both patients and medical staff.
-            With a growing patient base and outdated infrastructure, the client needed a unified, data-driven
-            platform to streamline care delivery and optimize administrative operations.
+            Our client — a mid-sized healthcare organization — aimed to modernize its patient
+            management system and improve accessibility of healthcare services for both patients and
+            medical staff. With a growing patient base and outdated infrastructure, the client
+            needed a unified, data-driven platform to streamline care delivery and optimize
+            administrative operations.
           </p>
         </section>
       </FadeInSection>
@@ -78,10 +80,10 @@ export default function HealthcareCaseStudy() {
         <section className="mt-20 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            We developed a comprehensive <strong>eHealth ecosystem</strong> that integrates clinical,
-            operational, and patient engagement functionalities under one secure digital platform.
-            The solution leveraged modern cloud architecture, advanced analytics, and an intuitive
-            user experience to deliver measurable outcomes.
+            We developed a comprehensive <strong>eHealth ecosystem</strong> that integrates
+            clinical, operational, and patient engagement functionalities under one secure digital
+            platform. The solution leveraged modern cloud architecture, advanced analytics, and an
+            intuitive user experience to deliver measurable outcomes.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -145,8 +147,8 @@ export default function HealthcareCaseStudy() {
       <FadeInSection>
         <section className="mt-20 max-w-3xl mx-auto text-center">
           <blockquote className="italic text-gray-700 text-lg">
-            “Their team helped us modernize our entire hospital workflow. From patient data management
-            to teleconsultations, every process became faster, smarter, and compliant.”
+            “Their team helped us modernize our entire hospital workflow. From patient data
+            management to teleconsultations, every process became faster, smarter, and compliant.”
           </blockquote>
           <p className="mt-4 font-semibold text-blue-700">— Head of IT, Healthcare Organization</p>
         </section>
@@ -155,7 +157,9 @@ export default function HealthcareCaseStudy() {
       {/* ===== CTA ===== */}
       <FadeInSection>
         <section className="mt-20 text-center bg-gradient-to-r from-blue-600 to-blue-500 text-white p-12 rounded-3xl">
-          <h2 className="text-3xl font-bold mb-4">Want to Build Your Own Digital Healthcare Solution?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Want to Build Your Own Digital Healthcare Solution?
+          </h2>
           <p className="max-w-2xl mx-auto mb-6">
             Let’s collaborate to design, develop, and deploy a secure, scalable, and patient-focused
             healthcare platform that transforms how care is delivered.

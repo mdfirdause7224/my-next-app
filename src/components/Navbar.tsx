@@ -282,7 +282,9 @@ export default function Navbar() {
               >
                 {NAV_ITEMS.map((item, idx) => (
                   <li key={item.name}>
-                    {['About Us', 'Services', 'Success Stories', 'Industries'].includes(item.name) ? (
+                    {['About Us', 'Services', 'Success Stories', 'Industries'].includes(
+                      item.name
+                    ) ? (
                       <button
                         onClick={() => setActiveDropdown(idx)}
                         className="block w-full text-left px-2 py-2 hover:text-white hover:bg-gray-800 rounded-md transition"

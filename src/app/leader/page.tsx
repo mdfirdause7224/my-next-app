@@ -52,7 +52,8 @@ export default function LeadershipPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg"
         >
-          Visionaries guiding our mission to deliver innovation, integrity, and excellence in every project we undertake.
+          Visionaries guiding our mission to deliver innovation, integrity, and excellence in every
+          project we undertake.
         </motion.p>
       </section>
 
@@ -125,16 +126,28 @@ export default function LeadershipPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg"
         >
-          We believe true leadership is about empowerment — inspiring creativity, driving innovation, and fostering
-          collaboration across every level of the organization.
+          We believe true leadership is about empowerment — inspiring creativity, driving
+          innovation, and fostering collaboration across every level of the organization.
         </motion.p>
 
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto mt-16 px-6">
           {[
-            { title: 'Vision & Innovation', desc: 'Shaping the future with forward-thinking strategies.' },
-            { title: 'Integrity & Transparency', desc: 'Building trust through honesty and openness.' },
-            { title: 'Collaboration & Growth', desc: 'Empowering teams to achieve extraordinary results together.' },
-            { title: 'Customer-Centric Mindset', desc: 'Delivering excellence through empathy and understanding.' },
+            {
+              title: 'Vision & Innovation',
+              desc: 'Shaping the future with forward-thinking strategies.',
+            },
+            {
+              title: 'Integrity & Transparency',
+              desc: 'Building trust through honesty and openness.',
+            },
+            {
+              title: 'Collaboration & Growth',
+              desc: 'Empowering teams to achieve extraordinary results together.',
+            },
+            {
+              title: 'Customer-Centric Mindset',
+              desc: 'Delivering excellence through empathy and understanding.',
+            },
           ].map((pillar, i) => (
             <motion.div
               key={pillar.title}
@@ -169,12 +182,10 @@ export default function LeadershipPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-gray-600 text-lg leading-relaxed mb-8"
         >
-          “At our core, we believe innovation thrives when passion meets purpose. Our team leads with empathy, vision,
-          and an unyielding commitment to excellence.”
+          “At our core, we believe innovation thrives when passion meets purpose. Our team leads
+          with empathy, vision, and an unyielding commitment to excellence.”
         </motion.p>
-        <p className="font-semibold text-blue-700 text-lg">
-          — Syed Zakeer Hussain, Founder & CEO
-        </p>
+        <p className="font-semibold text-blue-700 text-lg">— Syed Zakeer Hussain, Founder & CEO</p>
       </section>
     </main>
   );

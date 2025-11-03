@@ -36,8 +36,8 @@ export default function FinanceCaseStudy() {
             Innovation in Finance & FinTech
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            Empowering the financial world through digital transformation, data intelligence,
-            and secure automation.
+            Empowering the financial world through digital transformation, data intelligence, and
+            secure automation.
           </p>
         </div>
       </FadeInSection>
@@ -86,9 +86,9 @@ export default function FinanceCaseStudy() {
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             We engineered a modern <strong>FinTech platform</strong> that unified digital banking,
-            payments, and investment operations within a secure, scalable, and compliant system.
-            Our approach combined cloud-native infrastructure, intelligent automation, and intuitive
-            UX design to help the client drive customer trust and financial growth.
+            payments, and investment operations within a secure, scalable, and compliant system. Our
+            approach combined cloud-native infrastructure, intelligent automation, and intuitive UX
+            design to help the client drive customer trust and financial growth.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -167,10 +167,12 @@ export default function FinanceCaseStudy() {
       {/* ===== CTA ===== */}
       <FadeInSection>
         <section className="mt-20 text-center bg-gradient-to-r from-blue-600 to-blue-500 text-white p-12 rounded-3xl">
-          <h2 className="text-3xl font-bold mb-4">Looking to Transform Your Financial Ecosystem?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Looking to Transform Your Financial Ecosystem?
+          </h2>
           <p className="max-w-2xl mx-auto mb-6">
-            Partner with us to design secure, compliant, and intelligent FinTech solutions
-            that redefine the future of finance.
+            Partner with us to design secure, compliant, and intelligent FinTech solutions that
+            redefine the future of finance.
           </p>
           <Link href="/partner">
             <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full hover:bg-gray-100 transition">

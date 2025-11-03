@@ -48,7 +48,8 @@ export default function CareersPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-2xl mx-auto text-gray-600 text-lg"
         >
-          Join a team of thinkers, creators, and innovators dedicated to building digital experiences that make a difference.
+          Join a team of thinkers, creators, and innovators dedicated to building digital
+          experiences that make a difference.
         </motion.p>
       </section>
 
@@ -153,7 +154,8 @@ export default function CareersPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-lg mb-10 max-w-2xl mx-auto text-blue-100"
         >
-          We’re always open to meeting passionate people. Send us your resume, and we’ll reach out when the right opportunity arises.
+          We’re always open to meeting passionate people. Send us your resume, and we’ll reach out
+          when the right opportunity arises.
         </motion.p>
         <a
           href="mailto:contact@trangla.com"

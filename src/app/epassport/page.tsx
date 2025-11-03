@@ -13,13 +13,7 @@ import {
 } from 'react-icons/si';
 
 // Reusable animation wrapper
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: true });
 
@@ -57,8 +51,8 @@ export default function EpassportStory() {
               <span className="text-blue-600">ePassport Verification System</span>
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              A secure, end-to-end digital identity solution transforming manual verification into an
-              intelligent, automated, and scalable digital onboarding process.
+              A secure, end-to-end digital identity solution transforming manual verification into
+              an intelligent, automated, and scalable digital onboarding process.
             </p>
           </div>
         </FadeInSection>
@@ -68,9 +62,10 @@ export default function EpassportStory() {
           <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
             <h2 className="text-2xl font-semibold text-blue-700 mb-4">Project Overview</h2>
             <p className="text-gray-700 leading-relaxed">
-              The ePassport Verification System modernizes document verification for government and enterprise platforms.
-              It enables secure user onboarding, identity authentication, and real-time validation of official documents,
-              ensuring efficiency, accuracy, and compliance with modern digital standards.
+              The ePassport Verification System modernizes document verification for government and
+              enterprise platforms. It enables secure user onboarding, identity authentication, and
+              real-time validation of official documents, ensuring efficiency, accuracy, and
+              compliance with modern digital standards.
             </p>
           </div>
         </FadeInSection>
@@ -118,9 +113,10 @@ export default function EpassportStory() {
           <div className="bg-blue-600 text-white rounded-2xl shadow-lg p-8 md:p-12">
             <h3 className="text-2xl font-semibold mb-4">Outcome</h3>
             <p className="text-blue-50 leading-relaxed">
-              The ePassport Verification System replaced manual onboarding with an automated, secure, and efficient workflow.
-              It improved verification accuracy, reduced processing time by 70%, and established a foundation for a
-              future-ready digital identity ecosystem.
+              The ePassport Verification System replaced manual onboarding with an automated,
+              secure, and efficient workflow. It improved verification accuracy, reduced processing
+              time by 70%, and established a foundation for a future-ready digital identity
+              ecosystem.
             </p>
           </div>
         </FadeInSection>

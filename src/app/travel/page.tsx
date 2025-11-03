@@ -30,7 +30,8 @@ export default function TravelPage() {
             Digital Innovation in Travel & Hospitality
           </h1>
           <p className="mt-4 text-gray-600 text-lg">
-            Redefining travel experiences with smart digital solutions for booking, engagement, and customer delight.
+            Redefining travel experiences with smart digital solutions for booking, engagement, and
+            customer delight.
           </p>
         </div>
       </FadeInSection>
@@ -40,9 +41,10 @@ export default function TravelPage() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client — a growing global travel management company — aimed to deliver seamless travel
-            experiences and optimize their hospitality operations. They wanted to simplify bookings,
-            automate workflows, and enhance guest engagement with a unified digital ecosystem.
+            Our client — a growing global travel management company — aimed to deliver seamless
+            travel experiences and optimize their hospitality operations. They wanted to simplify
+            bookings, automate workflows, and enhance guest engagement with a unified digital
+            ecosystem.
           </p>
         </section>
       </FadeInSection>
@@ -77,9 +79,10 @@ export default function TravelPage() {
         <section className="mt-20 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
-            We built a unified digital platform that integrates booking, travel management, and guest
-            engagement. From dynamic hotel reservations to real-time itinerary updates and personalized
-            loyalty programs, the solution delivers a consistent and delightful experience across web and mobile.
+            We built a unified digital platform that integrates booking, travel management, and
+            guest engagement. From dynamic hotel reservations to real-time itinerary updates and
+            personalized loyalty programs, the solution delivers a consistent and delightful
+            experience across web and mobile.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -148,10 +151,13 @@ export default function TravelPage() {
       <FadeInSection>
         <section className="mt-20 max-w-3xl mx-auto text-center">
           <blockquote className="italic text-gray-700 text-lg">
-            “Our digital transformation journey became effortless with this team. The new travel platform
-            helped us improve engagement, automate operations, and deliver exceptional guest experiences.”
+            “Our digital transformation journey became effortless with this team. The new travel
+            platform helped us improve engagement, automate operations, and deliver exceptional
+            guest experiences.”
           </blockquote>
-          <p className="mt-4 font-semibold text-blue-700">— Director of Operations, Travel Company</p>
+          <p className="mt-4 font-semibold text-blue-700">
+            — Director of Operations, Travel Company
+          </p>
         </section>
       </FadeInSection>
 
@@ -160,8 +166,8 @@ export default function TravelPage() {
         <section className="mt-20 text-center bg-gradient-to-r from-blue-600 to-blue-500 text-white p-12 rounded-3xl">
           <h2 className="text-3xl font-bold mb-4">Want to Elevate Your Travel Business?</h2>
           <p className="max-w-2xl mx-auto mb-6">
-            Let’s craft immersive, customer-first digital experiences that transform how people travel,
-            book, and connect with destinations worldwide.
+            Let’s craft immersive, customer-first digital experiences that transform how people
+            travel, book, and connect with destinations worldwide.
           </p>
           <Link href="/partner">
             <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full hover:bg-gray-100 transition">

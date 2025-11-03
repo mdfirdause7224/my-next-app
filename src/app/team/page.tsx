@@ -62,7 +62,8 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg"
         >
-          A collective of innovators, developers, designers, and strategists — all driven by a shared passion to craft world-class digital experiences.
+          A collective of innovators, developers, designers, and strategists — all driven by a
+          shared passion to craft world-class digital experiences.
         </motion.p>
       </section>
 
@@ -123,7 +124,8 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg mb-20"
         >
-          The foundation of our success lies in our culture — collaboration, creativity, and continuous learning.
+          The foundation of our success lies in our culture — collaboration, creativity, and
+          continuous learning.
         </motion.p>
 
         <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto px-6">
@@ -183,7 +185,8 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-gray-600 text-lg leading-relaxed mb-10"
         >
-          We're always on the lookout for passionate individuals who love challenges, creativity, and impact.
+          We're always on the lookout for passionate individuals who love challenges, creativity,
+          and impact.
         </motion.p>
         <motion.a
           href="/JoinUs"
