@@ -23,8 +23,8 @@ export default function Navbar() {
       dropdown: [
         { label: 'About Us', href: '/About' },
         { label: 'Our Team', href: '/team' },
-        { label: 'Leadership', href: '/leadership' },
-        { label: 'Careers', href: '/careers' },
+        { label: 'Leadership', href: '/leader' },
+        { label: 'Careers', href: '/career' },
       ],
     },
     {
@@ -42,9 +42,9 @@ export default function Navbar() {
       href: '/Success',
       dropdown: [
         { label: 'ePassport User Verification System', href: '/epassport' },
-        { label: 'Automotive Voice AI', href: '/automotive' },
-        { label: 'Healthcare Voice Analysis', href: '/care' },
-        { label: 'Smart Device Integrations', href: '/smart-devices' },
+        { label: 'Zaggle – Hotel Booking System', href: '/zaggle' },
+        { label: 'Truck Management System', href: '/truck' },
+        { label: 'PlayAt – Sports Ground Booking App', href: '/playat' },
       ],
     },
     {
@@ -188,7 +188,7 @@ export default function Navbar() {
 
                 {/* Dropdown */}
                 <div
-                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
+                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[850px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
                     activeDropdown === idx
                       ? 'opacity-100 visible translate-y-0'
                       : 'opacity-0 invisible -translate-y-2'
@@ -282,7 +282,7 @@ export default function Navbar() {
               >
                 {NAV_ITEMS.map((item, idx) => (
                   <li key={item.name}>
-                    {['Services', 'Success Stories', 'Industries'].includes(item.name) ? (
+                    {['About Us', 'Services', 'Success Stories', 'Industries'].includes(item.name) ? (
                       <button
                         onClick={() => setActiveDropdown(idx)}
                         className="block w-full text-left px-2 py-2 hover:text-white hover:bg-gray-800 rounded-md transition"
