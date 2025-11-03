@@ -113,7 +113,7 @@ export default function JoinUsPage() {
             <p className="text-gray-600 max-w-3xl mx-auto">
               Our people are the heart of everything we do. With a team of skilled engineers,
               designers, and strategists, we turn complex challenges into seamless digital
-              experiences. At Trangla, you’ll find a culture that values excellence, respects
+              experiences. At Trangla, you&apos;ll find a culture that values excellence, respects
               individuality, and celebrates success together.
             </p>
           </section>
