@@ -174,22 +174,25 @@ export default function Navbar() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <div
-                  className={`relative px-4 py-4 cursor-pointer transition-colors ${activeDropdown === idx ? 'text-white' : 'hover:text-white'
-                    }`}
+                  className={`relative px-4 py-4 cursor-pointer transition-colors ${
+                    activeDropdown === idx ? 'text-white' : 'hover:text-white'
+                  }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-[50%] bg-sky-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center ${activeDropdown === idx ? 'scale-x-100' : ''
-                      }`}
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] w-[50%] bg-sky-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center ${
+                      activeDropdown === idx ? 'scale-x-100' : ''
+                    }`}
                   />
                 </div>
 
                 {/* Dropdown */}
                 <div
-                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${activeDropdown === idx
-                    ? 'opacity-100 visible translate-y-0'
-                    : 'opacity-0 invisible -translate-y-2'
-                    }`}
+                  className={`fixed left-1/2 top-[80px] -translate-x-1/2 w-[800px] bg-[#111111] rounded-2xl shadow-lg border border-[#222222] p-6 transition-all duration-300 z-50 ${
+                    activeDropdown === idx
+                      ? 'opacity-100 visible translate-y-0'
+                      : 'opacity-0 invisible -translate-y-2'
+                  }`}
                 >
                   <div className="grid grid-cols-2 gap-x-10 gap-y-4">
                     {splitIntoColumns(item.dropdown, 2).map((column, colIdx) => (
@@ -273,8 +276,9 @@ export default function Navbar() {
 
               {/* Main Menu */}
               <motion.ul
-                className={`flex flex-col gap-4 text-lg font-medium text-gray-300 transition-transform duration-300 ${activeDropdown === null ? 'translate-x-0' : '-translate-x-full'
-                  }`}
+                className={`flex flex-col gap-4 text-lg font-medium text-gray-300 transition-transform duration-300 ${
+                  activeDropdown === null ? 'translate-x-0' : '-translate-x-full'
+                }`}
               >
                 {NAV_ITEMS.map((item, idx) => (
                   <li key={item.name}>

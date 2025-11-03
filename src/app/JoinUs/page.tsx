@@ -48,8 +48,9 @@ export default function JoinUsPage() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto"
         >
-          Great ideas come to life when passionate people collaborate.  
-          At <span className="font-semibold text-blue-600">Trangla Innovations</span>, we’re building the future — one idea at a time.
+          Great ideas come to life when passionate people collaborate. At{' '}
+          <span className="font-semibold text-blue-600">Trangla Innovations</span>, we’re building
+          the future — one idea at a time.
         </motion.p>
 
         <motion.div
@@ -64,11 +65,14 @@ export default function JoinUsPage() {
         {/* ====== LIFE AT TRANGLA ====== */}
         <FadeInSection delay={0.2}>
           <section className="max-w-5xl mx-auto mb-20">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-900 text-center">Life at Trangla</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-gray-900 text-center">
+              Life at Trangla
+            </h2>
             <p className="text-gray-600 mb-10 text-center max-w-3xl mx-auto">
-              We foster an environment where creativity, collaboration, and continuous learning thrive.
-              Every idea is valued, every opinion matters, and every team member contributes to our shared mission —
-              delivering world-class digital solutions that inspire progress.
+              We foster an environment where creativity, collaboration, and continuous learning
+              thrive. Every idea is valued, every opinion matters, and every team member contributes
+              to our shared mission — delivering world-class digital solutions that inspire
+              progress.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -108,9 +112,10 @@ export default function JoinUsPage() {
           <section className="max-w-5xl mx-auto mb-20 text-center">
             <h2 className="text-3xl font-semibold mb-4 text-gray-900">Our Team</h2>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Our people are the heart of everything we do. With a team of skilled engineers, designers, and strategists,
-              we turn complex challenges into seamless digital experiences. At Trangla, you’ll find a culture that values
-              excellence, respects individuality, and celebrates success together.
+              Our people are the heart of everything we do. With a team of skilled engineers,
+              designers, and strategists, we turn complex challenges into seamless digital
+              experiences. At Trangla, you’ll find a culture that values excellence, respects
+              individuality, and celebrates success together.
             </p>
           </section>
         </FadeInSection>
@@ -120,24 +125,26 @@ export default function JoinUsPage() {
           <section className="max-w-5xl mx-auto mb-20 text-center">
             <h2 className="text-3xl font-semibold mb-4 text-gray-900">Stay Connected</h2>
             <p className="text-gray-600 mb-6">
-              We’re not currently hiring — but we’re always excited to connect with passionate professionals who want to
-              make a difference. If you’d like to be considered for future opportunities or collaborations, feel free to
-              reach out or share your portfolio with us.
+              We’re not currently hiring — but we’re always excited to connect with passionate
+              professionals who want to make a difference. If you’d like to be considered for future
+              opportunities or collaborations, feel free to reach out or share your portfolio with
+              us.
             </p>
 
-            <p className="text-blue-600 font-semibold mb-6">
-              📩 contact@trangla.com
-            </p>
+            <p className="text-blue-600 font-semibold mb-6">📩 contact@trangla.com</p>
           </section>
         </FadeInSection>
 
         {/* ====== FINAL SECTION ====== */}
         <FadeInSection delay={0.5}>
           <section className="max-w-4xl mx-auto text-center mt-10 mb-20">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-900">Let’s Build the Future, Together</h2>
+            <h2 className="text-3xl font-semibold mb-4 text-gray-900">
+              Let’s Build the Future, Together
+            </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Trangla Innovations isn’t just a workplace — it’s a community of thinkers, builders, and innovators
-              working toward a shared goal: to craft digital solutions that redefine possibilities.
+              Trangla Innovations isn’t just a workplace — it’s a community of thinkers, builders,
+              and innovators working toward a shared goal: to craft digital solutions that redefine
+              possibilities.
             </p>
           </section>
         </FadeInSection>
