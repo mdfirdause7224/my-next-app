@@ -124,10 +124,10 @@ export default function JoinUsPage() {
           <section className="max-w-5xl mx-auto mb-20 text-center">
             <h2 className="text-3xl font-semibold mb-4 text-gray-900">Stay Connected</h2>
             <p className="text-gray-600 mb-6">
-      We&apos;re not currently hiring — but we&apos;re always excited to connect with passionate
-              professionals who want to make a difference. If you&apos;d like to be considered for future
-              opportunities or collaborations, feel free to reach out or share your portfolio with
-              us.
+              We&apos;re not currently hiring — but we&apos;re always excited to connect with
+              passionate professionals who want to make a difference. If you&apos;d like to be
+              considered for future opportunities or collaborations, feel free to reach out or share
+              your portfolio with us.
             </p>
 
             <p className="text-blue-600 font-semibold mb-6">📩 contact@trangla.com</p>
@@ -141,9 +141,9 @@ export default function JoinUsPage() {
               Let’s Build the Future, Together
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-            Trangla Innovations isn&apos;t just a workplace — it&apos;s a community of thinkers, builders,
-              and innovators working toward a shared goal: to craft digital solutions that redefine
-              possibilities.
+              Trangla Innovations isn&apos;t just a workplace — it&apos;s a community of thinkers,
+              builders, and innovators working toward a shared goal: to craft digital solutions that
+              redefine possibilities.
             </p>
           </section>
         </FadeInSection>
