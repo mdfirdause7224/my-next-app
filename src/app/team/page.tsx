@@ -185,8 +185,8 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="text-gray-600 text-lg leading-relaxed mb-10"
         >
-          We&apos;re always on the lookout for passionate individuals who love challenges, creativity,
-          and impact.
+          We&apos;re always on the lookout for passionate individuals who love challenges,
+          creativity, and impact.
         </motion.p>
         <motion.a
           href="/JoinUs"
