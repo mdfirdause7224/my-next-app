@@ -28,13 +28,7 @@ import {
 } from 'react-icons/si';
 
 // Fade-in reusable wrapper
-function FadeInSection({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -239,7 +233,10 @@ export default function WdPage() {
             {[
               ['Discovery', 'Understanding client needs, goals, and audience.'],
               ['Design', 'Creating wireframes, UI/UX mockups, and user flows.'],
-              ['Development', 'Building responsive and optimized websites using modern frameworks.'],
+              [
+                'Development',
+                'Building responsive and optimized websites using modern frameworks.',
+              ],
               ['Testing', 'Ensuring performance, accessibility, and security across all browsers.'],
               ['Launch', 'Smooth deployment on reliable hosting environments.'],
               ['Maintenance', 'Continuous updates and technical support post-launch.'],

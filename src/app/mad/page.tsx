@@ -95,7 +95,8 @@ export default function MadPage() {
             Our <span className="font-semibold">Mobile Application Development</span> service
             delivers tailor-made mobile solutions that help businesses thrive in the digital space.
             From intuitive UI/UX design to backend integration and post-launch support, we focus on
-            delivering smooth, scalable, and high-performing apps for both iOS and Android platforms.
+            delivering smooth, scalable, and high-performing apps for both iOS and Android
+            platforms.
           </p>
         </section>
       </FadeInSection>
@@ -106,12 +107,30 @@ export default function MadPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-8">What We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: 'Native App Development', desc: 'High-performance Android and iOS apps built with Swift, Kotlin, and platform-native tools.' },
-              { title: 'Cross-Platform Development', desc: 'Code once, deploy everywhere with frameworks like React Native and Flutter.' },
-              { title: 'Custom UI/UX Design', desc: 'User-first interfaces designed to engage and retain your audience.' },
-              { title: 'Backend & API Integration', desc: 'Seamless connections to APIs, databases, and real-time cloud services.' },
-              { title: 'Maintenance & Support', desc: 'Post-launch updates, performance monitoring, and feature enhancements.' },
-              { title: 'App Store Optimization (ASO)', desc: 'Boost visibility and downloads with optimized app store strategies.' },
+              {
+                title: 'Native App Development',
+                desc: 'High-performance Android and iOS apps built with Swift, Kotlin, and platform-native tools.',
+              },
+              {
+                title: 'Cross-Platform Development',
+                desc: 'Code once, deploy everywhere with frameworks like React Native and Flutter.',
+              },
+              {
+                title: 'Custom UI/UX Design',
+                desc: 'User-first interfaces designed to engage and retain your audience.',
+              },
+              {
+                title: 'Backend & API Integration',
+                desc: 'Seamless connections to APIs, databases, and real-time cloud services.',
+              },
+              {
+                title: 'Maintenance & Support',
+                desc: 'Post-launch updates, performance monitoring, and feature enhancements.',
+              },
+              {
+                title: 'App Store Optimization (ASO)',
+                desc: 'Boost visibility and downloads with optimized app store strategies.',
+              },
             ].map((item) => (
               <motion.div
                 key={item.title}
