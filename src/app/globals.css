@@ -18,6 +18,26 @@
   }
 }
 
+/* =============== GLOBAL SCROLLBAR SETTINGS =============== */
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none; /* hides scrollbar */
+  scroll-behavior: smooth; /* enables smooth scrolling */
+}
+
+/* Keep scrolling enabled but invisible */
+body {
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
 /* =============== MEEAMI-STYLE DROPDOWN EFFECTS =============== */
 @keyframes dropdown-fade-slide {
   0% {

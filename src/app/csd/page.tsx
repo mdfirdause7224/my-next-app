@@ -3,8 +3,32 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiGraphql,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiMysql,
+  SiVercel,
+  SiAwsamplify,
+  SiGooglecloud,
+  SiNetlify,
+  SiStrapi,
+  SiSanity,
+  SiWordpress,
+  SiGithub,
+  SiFigma,
+  SiDocker,
+  SiCloudflare,
+} from 'react-icons/si';
 
-// Reusable animation wrapper with delayed activation for smoother page load
+// ✨ Reusable fade-in section with scroll animation
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
@@ -13,7 +37,7 @@ function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; del
     const timeout = setTimeout(() => {
       if (inView) controls.start('visible');
       else controls.start('hidden');
-    }, 150); // Delay fixes initial page “jump” effect
+    }, 150);
     return () => clearTimeout(timeout);
   }, [controls, inView]);
 
@@ -127,21 +151,74 @@ export default function CsdPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technology Stack</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
-              ['Frontend', 'Next.js, React.js, TypeScript, Tailwind CSS'],
-              ['Backend', 'Node.js, Express.js, REST APIs, GraphQL'],
-              ['Database', 'MongoDB, PostgreSQL, Firebase, MySQL'],
-              ['Deployment', 'Vercel, AWS, Google Cloud, Netlify'],
-              ['CMS & Integrations', 'Strapi, Sanity, WordPress, Headless CMS'],
-              ['Tools', 'GitHub, Figma, Docker, Cloudflare'],
-            ].map(([title, desc]) => (
+              {
+                title: 'Frontend',
+                items: [
+                  { icon: SiNextdotjs, name: 'Next.js' },
+                  { icon: SiReact, name: 'React.js' },
+                  { icon: SiTypescript, name: 'TypeScript' },
+                  { icon: SiTailwindcss, name: 'Tailwind CSS' },
+                ],
+              },
+              {
+                title: 'Backend',
+                items: [
+                  { icon: SiNodedotjs, name: 'Node.js' },
+                  { icon: SiExpress, name: 'Express.js' },
+                  { icon: SiGraphql, name: 'GraphQL' },
+                ],
+              },
+              {
+                title: 'Database',
+                items: [
+                  { icon: SiMongodb, name: 'MongoDB' },
+                  { icon: SiPostgresql, name: 'PostgreSQL' },
+                  { icon: SiFirebase, name: 'Firebase' },
+                  { icon: SiMysql, name: 'MySQL' },
+                ],
+              },
+              {
+                title: 'Deployment',
+                items: [
+                  { icon: SiVercel, name: 'Vercel' },
+                  { icon: SiAwsamplify, name: 'AWS' },
+                  { icon: SiGooglecloud, name: 'Google Cloud' },
+                  { icon: SiNetlify, name: 'Netlify' },
+                ],
+              },
+              {
+                title: 'CMS & Integrations',
+                items: [
+                  { icon: SiStrapi, name: 'Strapi' },
+                  { icon: SiSanity, name: 'Sanity' },
+                  { icon: SiWordpress, name: 'WordPress' },
+                ],
+              },
+              {
+                title: 'Tools',
+                items: [
+                  { icon: SiGithub, name: 'GitHub' },
+                  { icon: SiFigma, name: 'Figma' },
+                  { icon: SiDocker, name: 'Docker' },
+                  { icon: SiCloudflare, name: 'Cloudflare' },
+                ],
+              },
+            ].map((stack) => (
               <motion.div
-                key={title}
+                key={stack.title}
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-xl shadow p-5 hover:shadow-md transition-all"
               >
-                <h3 className="font-semibold text-blue-600 mb-2">{title}</h3>
-                <p>{desc}</p>
+                <h3 className="font-semibold text-blue-600 mb-3">{stack.title}</h3>
+                <ul className="space-y-2">
+                  {stack.items.map(({ icon: Icon, name }) => (
+                    <li key={name} className="flex items-center space-x-2">
+                      <Icon className="text-xl" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

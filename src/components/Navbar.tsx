@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react';
@@ -12,6 +12,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const router = useRouter();
+  const pathname = usePathname(); // ✅ Added
   const dropdownRef = useRef<HTMLDivElement>(null);
   const controls = useAnimation();
 
@@ -109,6 +110,12 @@ export default function Navbar() {
     }
   }, [isScrolled, isHovered, controls]);
 
+  // ✅ Close dropdown & mobile menu when route changes
+  useEffect(() => {
+    setActiveDropdown(null);
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <header className="fixed top-0 left-0 w-full flex justify-center z-50 font-inter">
       <div
@@ -185,19 +192,19 @@ export default function Navbar() {
                       : 'opacity-0 invisible -translate-y-2'
                   }`}
                 >
-                  <div className="grid grid-cols-3 gap-6">
-                    {splitIntoColumns(item.dropdown, 3).map((column, colIdx) => (
-                      <div key={colIdx} className="flex flex-col gap-2">
+                  <div className="grid grid-cols-2 gap-x-10 gap-y-4">
+                    {splitIntoColumns(item.dropdown, 2).map((column, colIdx) => (
+                      <div key={colIdx} className="flex flex-col gap-3">
                         {column.map((drop, i) => (
                           <Link
                             key={i}
                             href={drop.href}
-                            className="group flex flex-col px-3 py-2 rounded-md hover:bg-[#1a1a1a] transition-all"
+                            className="group flex flex-col px-4 py-2.5 rounded-xl hover:bg-[#1a1a1a] transition-all whitespace-nowrap"
                           >
-                            <span className="text-gray-300 group-hover:text-white text-sm font-medium">
+                            <span className="text-gray-200 group-hover:text-white text-base font-semibold tracking-wide whitespace-nowrap">
                               {drop.label}
                             </span>
-                            <span className="text-xs text-gray-500 mt-1">
+                            <span className="text-sm text-gray-500 group-hover:text-gray-400 mt-1 whitespace-nowrap">
                               Learn more about {drop.label}
                             </span>
                           </Link>

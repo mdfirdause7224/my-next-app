@@ -3,8 +3,31 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import {
+  SiReact,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiAngular,
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiDjango,
+  SiJavascript,
+  SiFlutter,
+  SiSwift,
+  SiKotlin,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiFirebase,
+  SiAmazon,
+  SiGooglecloud,
+  SiDocker,
+  SiKubernetes,
+  SiGithub,
+} from 'react-icons/si';
 
-// Reusable fade-in animation section with slight delay
+// ✅ Reusable fade-in section with no layout shift
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
@@ -20,9 +43,10 @@ function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; del
   return (
     <motion.div
       ref={ref}
+      style={{ willChange: 'opacity, transform', position: 'relative' }}
       variants={{
-        hidden: { opacity: 0, y: 60 },
-        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, transform: 'translateY(20px)' }, // subtle upward fade-in
+        visible: { opacity: 1, transform: 'translateY(0px)' },
       }}
       initial="hidden"
       animate={controls}
@@ -44,16 +68,16 @@ export default function SdhPage() {
         <section className="text-center max-w-5xl mx-auto mb-20">
           <motion.h1
             className="text-4xl md:text-6xl font-extrabold text-gray-900"
-            initial={{ opacity: 0, y: -30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: 'translateY(15px)' }}
+            animate={{ opacity: 1, transform: 'translateY(0px)' }}
             transition={{ duration: 1 }}
           >
             Software Development & Design Solutions
           </motion.h1>
           <motion.p
             className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, transform: 'translateY(10px)' }}
+            animate={{ opacity: 1, transform: 'translateY(0px)' }}
             transition={{ duration: 1.1, delay: 0.2 }}
           >
             At <span className="text-blue-600 font-semibold">Trangla</span>, we turn ideas into
@@ -136,8 +160,8 @@ export default function SdhPage() {
             ].map(([title, desc], i) => (
               <motion.li
                 key={title}
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, transform: 'translateX(-20px)' }}
+                whileInView={{ opacity: 1, transform: 'translateX(0px)' }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <span className="font-semibold">{title}:</span> {desc}
@@ -153,21 +177,74 @@ export default function SdhPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technologies We Use</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
-              ['Frontend', 'React.js, Next.js, Vue.js, Angular'],
-              ['Backend', 'Node.js, Express.js, Python, Django, Java'],
-              ['Mobile', 'React Native, Flutter, Swift, Kotlin'],
-              ['Database', 'MongoDB, MySQL, PostgreSQL, Firebase'],
-              ['Cloud', 'AWS, Google Cloud, Azure'],
-              ['DevOps', 'Docker, Kubernetes, CI/CD, GitHub Actions'],
-            ].map(([title, desc]) => (
+              {
+                title: 'Frontend',
+                items: [
+                  { icon: SiReact, name: 'React.js' },
+                  { icon: SiNextdotjs, name: 'Next.js' },
+                  { icon: SiVuedotjs, name: 'Vue.js' },
+                  { icon: SiAngular, name: 'Angular' },
+                ],
+              },
+              {
+                title: 'Backend',
+                items: [
+                  { icon: SiNodedotjs, name: 'Node.js' },
+                  { icon: SiExpress, name: 'Express.js' },
+                  { icon: SiPython, name: 'Python' },
+                  { icon: SiDjango, name: 'Django' },
+                  { icon: SiJavascript, name: 'JavaScript' },
+                ],
+              },
+              {
+                title: 'Mobile',
+                items: [
+                  { icon: SiReact, name: 'React Native' },
+                  { icon: SiFlutter, name: 'Flutter' },
+                  { icon: SiSwift, name: 'Swift' },
+                  { icon: SiKotlin, name: 'Kotlin' },
+                ],
+              },
+              {
+                title: 'Database',
+                items: [
+                  { icon: SiMongodb, name: 'MongoDB' },
+                  { icon: SiMysql, name: 'MySQL' },
+                  { icon: SiPostgresql, name: 'PostgreSQL' },
+                  { icon: SiFirebase, name: 'Firebase' },
+                ],
+              },
+              {
+                title: 'Cloud',
+                items: [
+                  { icon: SiAmazon, name: 'AWS' },
+                  { icon: SiGooglecloud, name: 'Google Cloud' },
+                ],
+              },
+              {
+                title: 'DevOps',
+                items: [
+                  { icon: SiDocker, name: 'Docker' },
+                  { icon: SiKubernetes, name: 'Kubernetes' },
+                  { icon: SiGithub, name: 'GitHub Actions' },
+                ],
+              },
+            ].map((stack) => (
               <motion.div
-                key={title}
+                key={stack.title}
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-xl shadow p-5 hover:shadow-md transition-all"
               >
-                <h3 className="font-semibold text-blue-600 mb-2">{title}</h3>
-                <p>{desc}</p>
+                <h3 className="font-semibold text-blue-600 mb-3">{stack.title}</h3>
+                <ul className="space-y-2">
+                  {stack.items.map(({ icon: Icon, name }) => (
+                    <li key={name} className="flex items-center space-x-2">
+                      <Icon className="text-xl" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

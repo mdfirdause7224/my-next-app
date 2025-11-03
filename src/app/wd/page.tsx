@@ -3,9 +3,38 @@
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiGraphql,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiMysql,
+  SiGithub,
+  SiVercel,
+  SiDocker,
+  SiCloudflare,
+  SiJest,
+  SiCypress,
+  SiGooglecloud,
+  SiAmazon,
+  SiNetlify,
+  SiPostman,
+} from 'react-icons/si';
 
-// Reusable fade-in section with delay and smooth animation
-function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+// Fade-in reusable wrapper
+function FadeInSection({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
 
@@ -122,27 +151,80 @@ export default function WdPage() {
         </section>
       </FadeInSection>
 
-      {/* Technology Stack */}
+      {/* Technology Stack with Icons */}
       <FadeInSection>
         <section className="max-w-5xl mx-auto mb-20">
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technology Stack</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
-              ['Frontend', 'Next.js, React.js, TypeScript, Tailwind CSS'],
-              ['Backend', 'Node.js, Express.js, REST, GraphQL'],
-              ['Databases', 'MongoDB, PostgreSQL, Firebase, MySQL'],
-              ['Tools & Platforms', 'GitHub, Vercel, Docker, Cloudflare'],
-              ['Testing', 'Jest, Cypress, Playwright, Postman'],
-              ['Deployment', 'Vercel, AWS, Google Cloud, Netlify'],
-            ].map(([title, desc]) => (
+              {
+                title: 'Frontend',
+                items: [
+                  { icon: SiNextdotjs, name: 'Next.js' },
+                  { icon: SiReact, name: 'React.js' },
+                  { icon: SiTypescript, name: 'TypeScript' },
+                  { icon: SiTailwindcss, name: 'Tailwind CSS' },
+                ],
+              },
+              {
+                title: 'Backend',
+                items: [
+                  { icon: SiNodedotjs, name: 'Node.js' },
+                  { icon: SiExpress, name: 'Express.js' },
+                  { icon: SiGraphql, name: 'GraphQL' },
+                ],
+              },
+              {
+                title: 'Databases',
+                items: [
+                  { icon: SiMongodb, name: 'MongoDB' },
+                  { icon: SiPostgresql, name: 'PostgreSQL' },
+                  { icon: SiFirebase, name: 'Firebase' },
+                  { icon: SiMysql, name: 'MySQL' },
+                ],
+              },
+              {
+                title: 'Tools & Platforms',
+                items: [
+                  { icon: SiGithub, name: 'GitHub' },
+                  { icon: SiVercel, name: 'Vercel' },
+                  { icon: SiDocker, name: 'Docker' },
+                  { icon: SiCloudflare, name: 'Cloudflare' },
+                ],
+              },
+              {
+                title: 'Testing',
+                items: [
+                  { icon: SiJest, name: 'Jest' },
+                  { icon: SiCypress, name: 'Cypress' },
+                  { icon: SiPostman, name: 'Postman' },
+                ],
+              },
+              {
+                title: 'Deployment',
+                items: [
+                  { icon: SiVercel, name: 'Vercel' },
+                  { icon: SiAmazon, name: 'AWS' },
+                  { icon: SiGooglecloud, name: 'Google Cloud' },
+                  { icon: SiNetlify, name: 'Netlify' },
+                ],
+              },
+            ].map((stack) => (
               <motion.div
-                key={title}
+                key={stack.title}
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-xl shadow p-5 hover:shadow-md transition-all"
               >
-                <h3 className="font-semibold text-blue-600 mb-2">{title}</h3>
-                <p>{desc}</p>
+                <h3 className="font-semibold text-blue-600 mb-3">{stack.title}</h3>
+                <ul className="space-y-2">
+                  {stack.items.map(({ icon: Icon, name }) => (
+                    <li key={name} className="flex items-center space-x-2">
+                      <Icon className="text-xl text-gray-800" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
@@ -157,10 +239,7 @@ export default function WdPage() {
             {[
               ['Discovery', 'Understanding client needs, goals, and audience.'],
               ['Design', 'Creating wireframes, UI/UX mockups, and user flows.'],
-              [
-                'Development',
-                'Building responsive and optimized websites using modern frameworks.',
-              ],
+              ['Development', 'Building responsive and optimized websites using modern frameworks.'],
               ['Testing', 'Ensuring performance, accessibility, and security across all browsers.'],
               ['Launch', 'Smooth deployment on reliable hosting environments.'],
               ['Maintenance', 'Continuous updates and technical support post-launch.'],
@@ -189,7 +268,7 @@ export default function WdPage() {
               'Responsive, high-performance web experiences.',
               'Transparent communication throughout development.',
               'Post-launch support and performance optimization.',
-            ].map((point, i) => (
+            ].map((point) => (
               <motion.li
                 key={point}
                 whileHover={{ x: 8 }}

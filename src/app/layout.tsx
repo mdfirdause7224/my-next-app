@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Inter, Roboto_Mono } from 'next/font/google';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import ScrollRestoration from '../components/ScrollRestoration';
 import './globals.css';
 
 const geistSans = Geist({
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     siteName: 'Trangla Innovations',
     images: [
       {
-        url: '/trangla_triangle.png', // updated OG meta image
+        url: '/trangla_triangle.png',
         width: 1200,
         height: 630,
         alt: 'Trangla triangle icon',
@@ -46,7 +47,6 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
-  // Favicons / icons updated to new image
   icons: {
     icon: '/trangla_triangle.png',
     shortcut: '/trangla_triangle.png',
@@ -54,7 +54,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Viewport moved to a separate export
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -73,6 +72,8 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        {/* ✅ Scroll restoration runs client-side only */}
+        <ScrollRestoration />
       </body>
     </html>
   );

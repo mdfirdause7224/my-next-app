@@ -4,7 +4,28 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-// Reusable animation section with smooth in-view transitions
+// Import icons
+import {
+  SiReact,
+  SiFlutter,
+  SiSwift,
+  SiKotlin,
+  SiNodedotjs,
+  SiDjango,
+  SiFirebase,
+  SiGraphql,
+  SiAmazon,
+  SiGooglecloud,
+  SiMongodb,
+  SiPostgresql,
+  SiSqlite,
+  SiDocker,
+  SiGithub,
+  SiFastlane,
+  SiCircleci,
+} from 'react-icons/si';
+
+// Reusable animation section
 function FadeInSection({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const controls = useAnimation();
   const [ref, inView] = useInView({ threshold: 0.15, triggerOnce: false });
@@ -74,8 +95,7 @@ export default function MadPage() {
             Our <span className="font-semibold">Mobile Application Development</span> service
             delivers tailor-made mobile solutions that help businesses thrive in the digital space.
             From intuitive UI/UX design to backend integration and post-launch support, we focus on
-            delivering smooth, scalable, and high-performing apps for both iOS and Android
-            platforms.
+            delivering smooth, scalable, and high-performing apps for both iOS and Android platforms.
           </p>
         </section>
       </FadeInSection>
@@ -86,30 +106,12 @@ export default function MadPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-8">What We Deliver</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Native App Development',
-                desc: 'High-performance Android and iOS apps built with Swift, Kotlin, and platform-native tools.',
-              },
-              {
-                title: 'Cross-Platform Development',
-                desc: 'Code once, deploy everywhere with frameworks like React Native and Flutter.',
-              },
-              {
-                title: 'Custom UI/UX Design',
-                desc: 'User-first interfaces designed to engage and retain your audience.',
-              },
-              {
-                title: 'Backend & API Integration',
-                desc: 'Seamless connections to APIs, databases, and real-time cloud services.',
-              },
-              {
-                title: 'Maintenance & Support',
-                desc: 'Post-launch updates, performance monitoring, and feature enhancements.',
-              },
-              {
-                title: 'App Store Optimization (ASO)',
-                desc: 'Boost visibility and downloads with optimized app store strategies.',
-              },
+              { title: 'Native App Development', desc: 'High-performance Android and iOS apps built with Swift, Kotlin, and platform-native tools.' },
+              { title: 'Cross-Platform Development', desc: 'Code once, deploy everywhere with frameworks like React Native and Flutter.' },
+              { title: 'Custom UI/UX Design', desc: 'User-first interfaces designed to engage and retain your audience.' },
+              { title: 'Backend & API Integration', desc: 'Seamless connections to APIs, databases, and real-time cloud services.' },
+              { title: 'Maintenance & Support', desc: 'Post-launch updates, performance monitoring, and feature enhancements.' },
+              { title: 'App Store Optimization (ASO)', desc: 'Boost visibility and downloads with optimized app store strategies.' },
             ].map((item) => (
               <motion.div
                 key={item.title}
@@ -131,50 +133,73 @@ export default function MadPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Technology Stack</h2>
           <div className="grid md:grid-cols-3 gap-8 text-gray-700">
             {[
-              ['Cross-Platform', 'React Native, Flutter'],
-              ['Native', 'Swift (iOS), Kotlin (Android)'],
-              ['Backend', 'Node.js, Django, Firebase, GraphQL, REST APIs'],
-              ['Cloud', 'AWS, Google Cloud, Azure, Firebase Hosting'],
-              ['Database', 'MongoDB, PostgreSQL, Firestore, SQLite'],
-              ['DevOps & Tools', 'GitHub, Docker, Fastlane, CI/CD pipelines'],
-            ].map(([title, desc]) => (
+              {
+                title: 'Cross-Platform',
+                items: [
+                  { icon: SiReact, name: 'React Native' },
+                  { icon: SiFlutter, name: 'Flutter' },
+                ],
+              },
+              {
+                title: 'Native',
+                items: [
+                  { icon: SiSwift, name: 'Swift (iOS)' },
+                  { icon: SiKotlin, name: 'Kotlin (Android)' },
+                ],
+              },
+              {
+                title: 'Backend',
+                items: [
+                  { icon: SiNodedotjs, name: 'Node.js' },
+                  { icon: SiDjango, name: 'Django' },
+                  { icon: SiFirebase, name: 'Firebase' },
+                  { icon: SiGraphql, name: 'GraphQL' },
+                ],
+              },
+              {
+                title: 'Cloud',
+                items: [
+                  { icon: SiAmazon, name: 'AWS' },
+                  { icon: SiGooglecloud, name: 'Google Cloud' },
+                  { icon: SiFirebase, name: 'Firebase Hosting' },
+                ],
+              },
+              {
+                title: 'Database',
+                items: [
+                  { icon: SiMongodb, name: 'MongoDB' },
+                  { icon: SiPostgresql, name: 'PostgreSQL' },
+                  { icon: SiSqlite, name: 'SQLite' },
+                ],
+              },
+              {
+                title: 'DevOps & Tools',
+                items: [
+                  { icon: SiDocker, name: 'Docker' },
+                  { icon: SiGithub, name: 'GitHub' },
+                  { icon: SiFastlane, name: 'Fastlane' },
+                  { icon: SiCircleci, name: 'CI/CD Pipelines' },
+                ],
+              },
+            ].map((stack) => (
               <motion.div
-                key={title}
+                key={stack.title}
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.3 }}
                 className="bg-white rounded-xl shadow p-5 hover:shadow-md transition-all"
               >
-                <h3 className="font-semibold text-blue-600 mb-2">{title}</h3>
-                <p>{desc}</p>
+                <h3 className="font-semibold text-blue-600 mb-3">{stack.title}</h3>
+                <ul className="space-y-2">
+                  {stack.items.map(({ icon: Icon, name }) => (
+                    <li key={name} className="flex items-center space-x-2">
+                      <Icon className="text-xl" />
+                      <span>{name}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>
-        </section>
-      </FadeInSection>
-
-      {/* Process */}
-      <FadeInSection>
-        <section className="max-w-5xl mx-auto mb-20">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-6">Our Development Process</h2>
-          <ol className="space-y-4 text-gray-700 leading-relaxed list-decimal list-inside text-lg">
-            {[
-              ['Research & Planning', 'Understanding your users, competitors, and business goals.'],
-              ['UI/UX Design', 'Creating intuitive user interfaces and experiences.'],
-              ['Development', 'Coding scalable and efficient apps using the right tech stack.'],
-              ['Testing', 'Ensuring stability, performance, and cross-device compatibility.'],
-              ['Deployment', 'Publishing on App Store and Google Play for global reach.'],
-              ['Maintenance', 'Continuous monitoring, updates, and feature improvements.'],
-            ].map(([title, desc], i) => (
-              <motion.li
-                key={title}
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-              >
-                <span className="font-semibold">{title}:</span> {desc}
-              </motion.li>
-            ))}
-          </ol>
         </section>
       </FadeInSection>
 
