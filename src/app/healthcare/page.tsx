@@ -164,7 +164,7 @@ export default function HealthcareCaseStudy() {
             Let’s collaborate to design, develop, and deploy a secure, scalable, and patient-focused
             healthcare platform that transforms how care is delivered.
           </p>
-          <Link href="/contact">
+          <Link href="/partner">
             <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full hover:bg-gray-100 transition">
               Let’s Connect
             </button>

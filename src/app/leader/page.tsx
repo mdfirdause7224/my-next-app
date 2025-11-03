@@ -13,23 +13,23 @@ const leadershipTeam = [
   {
     name: 'Syed Suhel',
     role: 'Founder & CEO',
-    image: '',
+    image: '/suhel.jpeg',
     bio: 'With a passion for innovation and precision, Suhel leads the company with a vision to create transformative digital experiences through technology and design.',
-    linkedin: 'https://www.linkedin.com/in/zakeer579/',
-  },
-  {
-    name: 'Harish',
-    role: 'CTO',
-    image: '',
-    bio: 'Harish oversees all technical operations, ensuring each product is scalable, secure, and future-ready with cutting-edge technologies and development practices.',
     linkedin: 'https://www.linkedin.com/in/suhel-syed-32a461305/',
   },
   {
-    name: 'Nagendra',
+    name: 'Harish Veerapaneni',
+    role: 'CTO',
+    image: '',
+    bio: 'Harish oversees all technical operations, ensuring each product is scalable, secure, and future-ready with cutting-edge technologies and development practices.',
+    linkedin: 'https://www.linkedin.com/in/veerapaneni-harish/',
+  },
+  {
+    name: 'Shahid Afridi',
     role: 'Creative Director',
     image: '',
     bio: 'Nagendra brings creativity to life by shaping user experiences that balance design aesthetics, business goals, and user needs seamlessly.',
-    linkedin: 'https://www.linkedin.com/in/mdyasirarafath/',
+    linkedin: 'https://www.linkedin.com/in/shahid--afridi/',
   },
 ];
 
@@ -185,7 +185,7 @@ export default function LeadershipPage() {
           “At our core, we believe innovation thrives when passion meets purpose. Our team leads
           with empathy, vision, and an unyielding commitment to excellence.”
         </motion.p>
-        <p className="font-semibold text-blue-700 text-lg">— Syed Zakeer Hussain, Founder & CEO</p>
+        <p className="font-semibold text-blue-700 text-lg">— Syed Suhel, Founder & CEO</p>
       </section>
     </main>
   );

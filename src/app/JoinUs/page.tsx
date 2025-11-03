@@ -130,7 +130,12 @@ export default function JoinUsPage() {
               your portfolio with us.
             </p>
 
-            <p className="text-blue-600 font-semibold mb-6">📩 contact@trangla.com</p>
+            <a
+              href="mailto:suhel.syed@trangla.com"
+              className="px-8 py-3 bg-white text-blue-700 font-medium rounded-full hover:bg-gray-100 transition"
+            >
+              Send Your Resume
+            </a>
           </section>
         </FadeInSection>
 

@@ -20,13 +20,13 @@ const teamMembers = [
   {
     name: 'Firdause Moghal',
     role: 'Frontend Developer',
-    image: '',
+    image: '/firdause.png',
     bio: 'Firdause transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
     name: 'Shahid Afridi',
     role: 'Project Manager',
-    image: '',
+    image: '/afridi.png',
     bio: 'Shahid drives projects with clarity, communication, and precision — ensuring every milestone is met with quality and purpose.',
   },
   {
