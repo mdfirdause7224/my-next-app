@@ -12,9 +12,15 @@ const fadeIn = (direction: 'left' | 'right' = 'left') => ({
 
 const teamMembers = [
   {
+    name: 'Shahid Afridi',
+    role: 'Project Manager',
+    image: '/afridi.png',
+    bio: 'Shahid drives projects with clarity, communication, and precision — ensuring every milestone is met with quality and purpose.',
+  },
+  {
     name: 'Shaik Thajeem',
     role: 'UI/UX Designer',
-    image: '',
+    image: '/thajeem.png',
     bio: 'Thajeem brings ideas to life through clean, intuitive, and engaging interfaces. His designs blend creativity with function to deliver seamless user journeys.',
   },
   {
@@ -24,22 +30,22 @@ const teamMembers = [
     bio: 'Firdause transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
-    name: 'Shahid Afridi',
-    role: 'Project Manager',
-    image: '/afridi.png',
-    bio: 'Shahid drives projects with clarity, communication, and precision — ensuring every milestone is met with quality and purpose.',
-  },
-  {
     name: 'Sameer Shaik',
     role: 'Backend Developer',
-    image: '',
+    image: '/sameer.jpeg',
     bio: 'Sameer engineers robust, scalable backend systems — building the backbone that ensures performance, security, and reliability.',
   },
   {
     name: 'Ibrahim Shaik',
     role: 'QA Engineer',
-    image: '',
+    image: '/ibrahim.jpeg',
     bio: 'Ibrahim ensures perfection in every detail, rigorously testing each product to deliver flawless, reliable digital experiences.',
+  },
+  {
+    name: 'Balagopal Salapakshi',
+    role: 'QA Engineer',
+    image: '/balagopal.png',
+    bio: 'Balagopal ensures perfection in every detail, rigorously testing each product to deliver flawless, reliable digital experiences.',
   },
 ];
 

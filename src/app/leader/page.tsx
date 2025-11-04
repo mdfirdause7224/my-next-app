@@ -13,23 +13,23 @@ const leadershipTeam = [
   {
     name: 'Syed Suhel',
     role: 'Founder & CEO',
-    image: '/suhel.jpeg',
+    image: '/suhel.png',
     bio: 'With a passion for innovation and precision, Suhel leads the company with a vision to create transformative digital experiences through technology and design.',
     linkedin: 'https://www.linkedin.com/in/suhel-syed-32a461305/',
   },
   {
     name: 'Harish Veerapaneni',
     role: 'CTO',
-    image: '',
+    image: '/harish.png',
     bio: 'Harish oversees all technical operations, ensuring each product is scalable, secure, and future-ready with cutting-edge technologies and development practices.',
     linkedin: 'https://www.linkedin.com/in/veerapaneni-harish/',
   },
   {
-    name: 'Shahid Afridi',
+    name: 'Nagendra',
     role: 'Creative Director',
-    image: '',
+    image: '/nagendra.png',
     bio: 'Nagendra brings creativity to life by shaping user experiences that balance design aesthetics, business goals, and user needs seamlessly.',
-    linkedin: 'https://www.linkedin.com/in/shahid--afridi/',
+    linkedin: 'https://www.linkedin.com/in/nagendra-anasuri-91b7bb39/',
   },
 ];
 
