@@ -80,8 +80,9 @@ export default function OurTeamPage() {
           return (
             <motion.div
               key={member.name}
-              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${isEven ? '' : 'md:flex-row-reverse'
-                }`}
+              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${
+                isEven ? '' : 'md:flex-row-reverse'
+              }`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
