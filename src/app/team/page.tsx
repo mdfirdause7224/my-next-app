@@ -13,9 +13,9 @@ const fadeIn = (direction: 'left' | 'right' = 'left') => ({
 const teamMembers = [
   {
     name: 'Shahid Afridi',
-    role: 'Project Manager',
+    role: 'Full Stack Developer',
     image: '/afridi.png',
-    bio: 'Shahid drives projects with clarity, communication, and precision — ensuring every milestone is met with quality and purpose.',
+    bio: 'Shahid is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
   {
     name: 'Shaik Thajeem',
@@ -80,9 +80,8 @@ export default function OurTeamPage() {
           return (
             <motion.div
               key={member.name}
-              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${
-                isEven ? '' : 'md:flex-row-reverse'
-              }`}
+              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${isEven ? '' : 'md:flex-row-reverse'
+                }`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
