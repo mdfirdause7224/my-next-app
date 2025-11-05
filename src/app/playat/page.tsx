@@ -43,7 +43,7 @@ export default function SuccessStoryPlayAt() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
               A seamless sports booking platform designed for athletes and enthusiasts to discover,
-              book, and engage with sports facilities across Hyderabad — built for speed,
+              book, and engage with sports facilities across Hyderabad built for speed,
               simplicity, and community.
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function SuccessStoryPlayAt() {
               PlayAt successfully launched as a go-to platform for sports enthusiasts in Hyderabad,
               improving accessibility to sports venues and boosting engagement among users. The app
               achieved smooth performance, responsive UI, and positive feedback for its simplicity
-              and intuitive design — strengthening PlayAt’s community-driven vision.
+              and intuitive design strengthening PlayAt’s community-driven vision.
             </p>
           </div>
         </FadeInSection>

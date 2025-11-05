@@ -43,7 +43,7 @@ export default function SuccessStoryZaggle() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
               A next-generation booking platform designed for fast, seamless, and reliable hotel
-              reservations — bringing comfort and convenience to every traveler’s journey.
+              reservations bringing comfort and convenience to every traveler’s journey.
             </p>
           </div>
         </FadeInSection>
@@ -117,7 +117,7 @@ export default function SuccessStoryZaggle() {
             <p className="leading-relaxed text-blue-50 relative z-10">
               The platform achieved a 40% faster load time and a 25% increase in completed bookings.
               With an intuitive interface and real-time reliability, Zaggle’s booking system has set
-              a new standard in seamless online hotel reservations — driving both user satisfaction
+              a new standard in seamless online hotel reservations driving both user satisfaction
               and business growth.
             </p>
           </div>

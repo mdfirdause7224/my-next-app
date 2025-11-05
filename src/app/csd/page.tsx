@@ -93,7 +93,7 @@ export default function CsdPage() {
           <p className="text-gray-700 leading-relaxed text-lg">
             Our <span className="font-semibold">Custom Site Development</span> approach is focused
             on building distinctive, scalable, and high-performing websites that reflect your brand
-            identity. We don’t use pre-made templates — every pixel, line of code, and animation is
+            identity. We don’t use pre-made templates every pixel, line of code, and animation is
             purposefully created to deliver an experience that is both functional and visually
             captivating across all devices.
           </p>
@@ -128,7 +128,7 @@ export default function CsdPage() {
               },
               {
                 title: 'Custom Functionality',
-                desc: 'From booking tools to dashboards — we bring your specific needs to life.',
+                desc: 'From booking tools to dashboards we bring your specific needs to life.',
               },
             ].map((item) => (
               <motion.div
@@ -260,7 +260,7 @@ export default function CsdPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Why Choose Us</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg">
             {[
-              'Fully custom-coded websites — no templates or themes.',
+              'Fully custom-coded websites no templates or themes.',
               'Built with cutting-edge frameworks: Next.js, TypeScript, Tailwind CSS.',
               'Performance-first, SEO-friendly, and scalable by design.',
               'Collaborative process with transparent communication.',

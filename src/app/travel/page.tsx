@@ -41,7 +41,7 @@ export default function TravelPage() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client — a growing global travel management company — aimed to deliver seamless
+            Our client a growing global travel management company aimed to deliver seamless
             travel experiences and optimize their hospitality operations. They wanted to simplify
             bookings, automate workflows, and enhance guest engagement with a unified digital
             ecosystem.
@@ -156,7 +156,7 @@ export default function TravelPage() {
             guest experiences.”
           </blockquote>
           <p className="mt-4 font-semibold text-blue-700">
-            — Director of Operations, Travel Company
+            Director of Operations, Travel Company
           </p>
         </section>
       </FadeInSection>

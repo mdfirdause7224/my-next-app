@@ -22,7 +22,7 @@ export default function AboutPage() {
               At <span className="font-semibold">Trangla Innovations</span>, we transform ideas into
               high-impact digital solutions. With{' '}
               <span className="font-semibold">50+ skilled professionals</span>, we specialize in{' '}
-              <span className="font-semibold">Full-Stack Development</span>— covering intuitive{' '}
+              <span className="font-semibold">Full-Stack Development</span>-covering intuitive{' '}
               <strong>Frontend</strong> experiences, robust <strong>Backend</strong> architectures,
               and complete web and mobile applications.
             </p>
@@ -58,14 +58,14 @@ export default function AboutPage() {
             <div className="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
               <h3 className="text-xl font-semibold mb-3">Agile Structure</h3>
               <p className="text-gray-700 leading-relaxed">
-                Our lean, agile model minimizes barriers—empowering teams to deliver faster with
+                Our lean, agile model minimizes barriers empowering teams to deliver faster with
                 greater communication and efficiency.
               </p>
             </div>
             <div className="bg-gray-50 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
               <h3 className="text-xl font-semibold mb-3">Built for Digital Success</h3>
               <p className="text-gray-700 leading-relaxed">
-                Nimble and expert-driven, our teams consistently exceed expectations—accelerating
+                Nimble and expert-driven, our teams consistently exceed expectations accelerating
                 innovation and launching impactful solutions.
               </p>
             </div>

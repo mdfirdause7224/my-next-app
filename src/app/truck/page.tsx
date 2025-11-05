@@ -63,7 +63,7 @@ export default function SuccessStoryTruckManagement() {
               <p className="text-gray-700">
                 SwiftLogistics needed a scalable and reliable fleet management system that could
                 offer real-time visibility, optimize truck routes, and streamline dispatcher-driver
-                communication — all while ensuring a user-friendly interface and fast system
+                communication all while ensuring a user-friendly interface and fast system
                 performance.
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function SuccessStoryTruckManagement() {
               <p className="text-gray-700">
                 We developed a responsive and interactive front-end using ReactJS and Tailwind CSS,
                 integrating real-time data via REST APIs for live truck status and route updates.
-                The design emphasized clarity, speed, and usability — empowering logistics teams to
+                The design emphasized clarity, speed, and usability empowering logistics teams to
                 make informed decisions in real time.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function SuccessStoryTruckManagement() {
               The Truck Management System transformed SwiftLogistics’ fleet operations by providing
               real-time insights, reducing communication delays, and improving route efficiency. It
               led to faster decision-making, optimized delivery times, and higher customer
-              satisfaction — setting a new standard for logistics efficiency.
+              satisfaction setting a new standard for logistics efficiency.
             </p>
           </div>
         </FadeInSection>

@@ -82,7 +82,7 @@ export default function MadPage() {
             <span className="text-blue-600 font-semibold">Flutter</span>,{' '}
             <span className="text-blue-600 font-semibold">Swift</span>, and{' '}
             <span className="text-blue-600 font-semibold">Kotlin</span>. We build apps that connect
-            brands with their audiences—fast, reliable, and scalable.
+            brands with their audiences fast, reliable, and scalable.
           </motion.p>
         </section>
       </FadeInSection>

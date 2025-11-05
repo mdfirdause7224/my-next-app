@@ -41,7 +41,7 @@ export default function HealthcareCaseStudy() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client — a mid-sized healthcare organization — aimed to modernize its patient
+            Our client a mid-sized healthcare organization aimed to modernize its patient
             management system and improve accessibility of healthcare services for both patients and
             medical staff. With a growing patient base and outdated infrastructure, the client
             needed a unified, data-driven platform to streamline care delivery and optimize
@@ -150,7 +150,7 @@ export default function HealthcareCaseStudy() {
             “Their team helped us modernize our entire hospital workflow. From patient data
             management to teleconsultations, every process became faster, smarter, and compliant.”
           </blockquote>
-          <p className="mt-4 font-semibold text-blue-700">— Head of IT, Healthcare Organization</p>
+          <p className="mt-4 font-semibold text-blue-700">Head of IT, Healthcare Organization</p>
         </section>
       </FadeInSection>
 

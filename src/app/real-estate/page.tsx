@@ -44,7 +44,7 @@ export default function RealEstateCaseStudy() {
             Our client, a fast-growing real estate firm, aimed to move beyond traditional property
             listings and bring digital innovation into how customers explore, inquire, and book
             properties. They needed a unified platform that integrates property data, sales
-            processes, and client communications — all while offering immersive digital experiences.
+            processes, and client communications all while offering immersive digital experiences.
           </p>
         </section>
       </FadeInSection>
@@ -80,7 +80,7 @@ export default function RealEstateCaseStudy() {
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             We built a comprehensive <strong>Real Estate Digital Platform</strong> that helps
-            property developers, agents, and customers seamlessly manage every stage — from listing
+            property developers, agents, and customers seamlessly manage every stage from listing
             to booking. Our solution integrates data analytics, automation, and immersive technology
             to enhance transparency and boost conversions.
           </p>
@@ -155,7 +155,7 @@ export default function RealEstateCaseStudy() {
             faster, and customers love the virtual tours. It’s a real game-changer for our
             business.”
           </blockquote>
-          <p className="mt-4 font-semibold text-blue-700">— Managing Director, Real Estate Group</p>
+          <p className="mt-4 font-semibold text-blue-700">Managing Director, Real Estate Group</p>
         </section>
       </FadeInSection>
 
@@ -165,7 +165,7 @@ export default function RealEstateCaseStudy() {
           <h2 className="text-3xl font-bold mb-4">Ready to Build Your Property Tech Platform?</h2>
           <p className="max-w-2xl mx-auto mb-6">
             Partner with us to create smart, scalable, and visually stunning digital solutions for
-            your real estate business — from listings to live tours.
+            your real estate business from listings to live tours.
           </p>
           <Link href="/partner">
             <button className="px-8 py-3 bg-white text-blue-700 font-semibold rounded-full hover:bg-gray-100 transition">

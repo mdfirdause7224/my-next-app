@@ -10,57 +10,79 @@ const fadeIn = (direction: 'left' | 'right' = 'left') => ({
   visible: { opacity: 1, x: 0 },
 });
 
+// ---------- TEAM DATA ----------
 const teamMembers = [
   {
     name: 'Shahid Afridi',
     role: 'Full Stack Developer',
-    image: '/afridi.png',
+    image: '/afridi.jpg',
+    linkedin: 'https://www.linkedin.com/in/shahid--afridi/',
     bio: 'Shahid is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
   {
     name: 'Shaik Thajeem',
     role: 'UI/UX Designer',
     image: '/thajeem.png',
+    linkedin: 'https://www.linkedin.com/in/thajeemshaik//',
     bio: 'Thajeem brings ideas to life through clean, intuitive, and engaging interfaces. His designs blend creativity with function to deliver seamless user journeys.',
   },
   {
     name: 'Firdause Moghal',
     role: 'Frontend Developer',
     image: '/firdause.png',
+    linkedin: 'https://www.linkedin.com/in/firdause-moghal//',
     bio: 'Firdause transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
     name: 'Sameer Shaik',
     role: 'Backend Developer',
     image: '/sameer.jpeg',
-    bio: 'Sameer engineers robust, scalable backend systems — building the backbone that ensures performance, security, and reliability.',
+    linkedin: 'https://www.linkedin.com/in/sameer-basha-shaik-112965255/',
+    bio: 'Sameer engineers robust, scalable backend systems building the backbone that ensures performance, security, and reliability.',
+  },
+  {
+    name: 'Harsha Vukoti',
+    role: 'Full Stack Developer',
+    image: '/harsha.jpg',
+    linkedin: 'https://www.linkedin.com/in/praharsha-vukoti/',
+    bio: 'Harsha is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
+  },
+  {
+    name: 'Shaik Lubaba',
+    role: 'Software Engineer',
+    image: '/lubaba.jpg',
+    linkedin: 'https://www.linkedin.com/in/shaiklubaba/',
+    bio: 'Lubaba is a Software Engineer who ensures perfection in every detail building, testing, and refining each product to deliver seamless, high-performing digital experiences.',
+  },
+  {
+    name: 'Inthiyaz Shaik',
+    role: 'Frontend Developer',
+    image: '/Inthiyaz.jpeg',
+    linkedin: 'https://www.linkedin.com/in/shaikinthiyaz/',
+    bio: 'Inthiyaz transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
     name: 'Ibrahim Shaik',
-    role: 'QA Engineer',
+    role: 'Full Stack Developer',
     image: '/ibrahim.jpeg',
-    bio: 'Ibrahim ensures perfection in every detail, rigorously testing each product to deliver flawless, reliable digital experiences.',
-  },
-  {
-    name: 'Balagopal Salapakshi',
-    role: 'QA Engineer',
-    image: '/balagopal.png',
-    bio: 'Balagopal ensures perfection in every detail, rigorously testing each product to deliver flawless, reliable digital experiences.',
+    linkedin: 'https://www.linkedin.com/in/shaik-ibrahim-626ba5386/',
+    bio: 'Ibrahim is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
 ];
 
 export default function OurTeamPage() {
   return (
-    <main className="bg-white text-gray-800">
+    <main className="bg-white text-gray-800 bg-gradient-to-b from-blue-50 to-white pt-12">
+
       {/* ================= HERO SECTION ================= */}
-      <section className="text-center py-24 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+      <section className="text-center py-10 relative overflow-hidden">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-6xl font-bold mb-6"
         >
-          Our Team, Our Strength
+          Meet Our Team
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -68,48 +90,62 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg"
         >
-          A collective of innovators, developers, designers, and strategists — all driven by a
+          A collective of innovators, developers, designers, and strategists all driven by a
           shared passion to craft world-class digital experiences.
         </motion.p>
       </section>
 
-      {/* ================= TEAM MEMBERS (ALTERNATING) ================= */}
-      <section className="max-w-6xl mx-auto px-6 md:px-10 py-20 space-y-28">
-        {teamMembers.map((member, index) => {
-          const isEven = index % 2 === 0;
-          return (
+      {/* ================= TEAM MEMBERS (2 PER ROW CARDS) ================= */}
+      <section className="max-w-7xl mx-auto px-6 md:px-10 py-20">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10">
+          {teamMembers.map((member, index) => (
             <motion.div
               key={member.name}
-              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${
-                isEven ? '' : 'md:flex-row-reverse'
-              }`}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={fadeIn(isEven ? 'left' : 'right')}
-              transition={{ duration: 0.7 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-6 flex items-center gap-6 border border-gray-200 hover:border-blue-300"
             >
               {/* Image */}
-              <div className="relative w-full md:w-1/2 flex justify-center">
-                <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-3xl overflow-hidden shadow-lg group">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
+              <div className="relative w-32 h-40 sm:w-36 sm:h-44 rounded-xl overflow-hidden shadow-md border bg-white shrink-0">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
 
               {/* Text */}
-              <div className="w-full md:w-1/2">
-                <h3 className="text-3xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-4">{member.role}</p>
-                <p className="text-gray-600 text-lg leading-relaxed">{member.bio}</p>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
+                <p className="text-blue-600 font-medium text-sm mb-2">{member.role}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+
+                {/* LinkedIn Button */}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 mt-3 text-sm font-medium"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-5 h-5"
+                    >
+                      <path d="M19 3A2.994 2.994 0 0 1 22 6v12a2.994 2.994 0 0 1-3 3H5a2.994 2.994 0 0 1-3-3V6a2.994 2.994 0 0 1 3-3h14zm-8 7h-2v8h2v-8zm-1-4a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 10 6zM18 13.5c0-2.142-1.358-3.5-3.25-3.5A3.3 3.3 0 0 0 12 11.012V10h-2v8h2v-4.25c0-1.242.758-1.75 1.75-1.75s1.75.667 1.75 1.75V18h2v-4.5z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                )}
               </div>
             </motion.div>
-          );
-        })}
+          ))}
+        </div>
       </section>
 
       {/* ================= TEAM VALUES ================= */}
@@ -205,6 +241,7 @@ export default function OurTeamPage() {
           View Career Opportunities
         </motion.a>
       </section>
+
     </main>
   );
 }

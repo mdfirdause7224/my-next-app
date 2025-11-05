@@ -260,7 +260,7 @@ export default function WdPage() {
           <h2 className="text-3xl font-semibold text-gray-900 mb-6">Why Choose Us</h2>
           <ul className="grid md:grid-cols-2 gap-4 text-gray-700 text-lg">
             {[
-              'Fully custom-coded — no themes or templates.',
+              'Fully custom-coded no themes or templates.',
               'Modern, scalable, and SEO-friendly architecture.',
               'Responsive, high-performance web experiences.',
               'Transparent communication throughout development.',

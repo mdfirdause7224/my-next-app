@@ -160,7 +160,7 @@ export default function FinanceCaseStudy() {
             “The new FinTech platform not only strengthened our digital banking capabilities but
             also gave our customers a seamless and secure financial experience.”
           </blockquote>
-          <p className="mt-4 font-semibold text-blue-700">— CTO, FinTech Organization</p>
+          <p className="mt-4 font-semibold text-blue-700">CTO, FinTech Organization</p>
         </section>
       </FadeInSection>
 

@@ -154,7 +154,7 @@ export default function RetailCaseStudy() {
             “We went from manual store operations to a fully automated, data-driven retail system.
             Our sales and customer engagement have grown beyond expectations.”
           </blockquote>
-          <p className="mt-4 font-semibold text-blue-700">— CEO, Retail Brand Client</p>
+          <p className="mt-4 font-semibold text-blue-700">CEO, Retail Brand Client</p>
         </section>
       </FadeInSection>
 
