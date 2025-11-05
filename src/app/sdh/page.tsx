@@ -81,8 +81,8 @@ export default function SdhPage() {
             transition={{ duration: 1.1, delay: 0.2 }}
           >
             At <span className="text-blue-600 font-semibold">Trangla</span>, we turn ideas into
-            impactful digital experiences crafted through innovative design, modern technology,
-            and result-driven strategy.
+            impactful digital experiences crafted through innovative design, modern technology, and
+            result-driven strategy.
           </motion.p>
         </section>
       </FadeInSection>
@@ -94,8 +94,8 @@ export default function SdhPage() {
           <p className="text-gray-700 leading-relaxed text-lg">
             Our team of designers and developers collaborate to bring your ideas to life through
             thoughtful, client-oriented design and software development. From websites and mobile
-            apps to enterprise systems, branding, UI/UX, and marketing we deliver end-to-end
-            digital solutions to help your business thrive in the modern digital world.
+            apps to enterprise systems, branding, UI/UX, and marketing we deliver end-to-end digital
+            solutions to help your business thrive in the modern digital world.
           </p>
         </section>
       </FadeInSection>

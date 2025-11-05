@@ -41,8 +41,8 @@ export default function EducationCaseStudy() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client a national education group wanted to transition from in-person training
-            to a fully digital learning ecosystem. Their goal was to create a modern platform that
+            Our client a national education group wanted to transition from in-person training to a
+            fully digital learning ecosystem. Their goal was to create a modern platform that
             supports interactive learning, personalized progress tracking, and virtual classroom
             collaboration for thousands of students across regions.
           </p>

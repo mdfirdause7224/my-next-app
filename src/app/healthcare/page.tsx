@@ -41,11 +41,11 @@ export default function HealthcareCaseStudy() {
         <section className="mt-16 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold mb-3">Client Overview</h2>
           <p className="text-gray-700 leading-relaxed">
-            Our client a mid-sized healthcare organization aimed to modernize its patient
-            management system and improve accessibility of healthcare services for both patients and
-            medical staff. With a growing patient base and outdated infrastructure, the client
-            needed a unified, data-driven platform to streamline care delivery and optimize
-            administrative operations.
+            Our client a mid-sized healthcare organization aimed to modernize its patient management
+            system and improve accessibility of healthcare services for both patients and medical
+            staff. With a growing patient base and outdated infrastructure, the client needed a
+            unified, data-driven platform to streamline care delivery and optimize administrative
+            operations.
           </p>
         </section>
       </FadeInSection>

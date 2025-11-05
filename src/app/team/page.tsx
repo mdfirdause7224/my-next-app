@@ -73,7 +73,6 @@ const teamMembers = [
 export default function OurTeamPage() {
   return (
     <main className="bg-white text-gray-800 bg-gradient-to-b from-blue-50 to-white pt-12">
-
       {/* ================= HERO SECTION ================= */}
       <section className="text-center py-10 relative overflow-hidden">
         <motion.h1
@@ -90,8 +89,8 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg"
         >
-          A collective of innovators, developers, designers, and strategists all driven by a
-          shared passion to craft world-class digital experiences.
+          A collective of innovators, developers, designers, and strategists all driven by a shared
+          passion to craft world-class digital experiences.
         </motion.p>
       </section>
 
@@ -241,7 +240,6 @@ export default function OurTeamPage() {
           View Career Opportunities
         </motion.a>
       </section>
-
     </main>
   );
 }

@@ -80,9 +80,9 @@ export default function RealEstateCaseStudy() {
           <h2 className="text-2xl font-semibold mb-4">Our Solution</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             We built a comprehensive <strong>Real Estate Digital Platform</strong> that helps
-            property developers, agents, and customers seamlessly manage every stage from listing
-            to booking. Our solution integrates data analytics, automation, and immersive technology
-            to enhance transparency and boost conversions.
+            property developers, agents, and customers seamlessly manage every stage from listing to
+            booking. Our solution integrates data analytics, automation, and immersive technology to
+            enhance transparency and boost conversions.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-8">

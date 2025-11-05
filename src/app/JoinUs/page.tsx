@@ -70,8 +70,7 @@ export default function JoinUsPage() {
             <p className="text-gray-600 mb-10 text-center max-w-3xl mx-auto">
               We foster an environment where creativity, collaboration, and continuous learning
               thrive. Every idea is valued, every opinion matters, and every team member contributes
-              to our shared mission delivering world-class digital solutions that inspire
-              progress.
+              to our shared mission delivering world-class digital solutions that inspire progress.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6">

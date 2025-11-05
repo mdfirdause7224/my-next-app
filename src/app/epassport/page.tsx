@@ -76,8 +76,8 @@ export default function EpassportStory() {
             <div className="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition">
               <h3 className="text-2xl font-semibold text-blue-700 mb-4">Challenge</h3>
               <p className="text-gray-700 leading-relaxed">
-                Traditional document verification was slow, manual, and error-prone requiring
-                human validation of IDs, passports, and residency proofs. This process increased
+                Traditional document verification was slow, manual, and error-prone requiring human
+                validation of IDs, passports, and residency proofs. This process increased
                 administrative workload and delayed user access to key services.
               </p>
             </div>

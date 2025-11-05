@@ -43,8 +43,8 @@ export default function SuccessStoryPlayAt() {
             </h2>
             <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
               A seamless sports booking platform designed for athletes and enthusiasts to discover,
-              book, and engage with sports facilities across Hyderabad built for speed,
-              simplicity, and community.
+              book, and engage with sports facilities across Hyderabad built for speed, simplicity,
+              and community.
             </p>
           </div>
         </FadeInSection>
