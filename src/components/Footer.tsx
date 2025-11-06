@@ -36,7 +36,7 @@ export default function Footer() {
               <h3 className="font-semibold mb-5">MENU</h3>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/dashboard">Home</Link>
+                  <Link href="/">Home</Link>
                 </li>
                 <li>
                   <Link href="/About">About Us</Link>
@@ -61,23 +61,8 @@ export default function Footer() {
               <h3 className="font-semibold mb-5">SOCIAL</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/company/trangla/" target="_blank" rel="noopener noreferrer">
                     LinkedIn
-                  </a>
-                </li>
-                <li>
-                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                    YouTube
-                  </a>
-                </li>
-                <li>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                    Facebook
                   </a>
                 </li>
               </ul>
