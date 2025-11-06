@@ -50,8 +50,8 @@ const Services: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          We provide a full range of development services to bring your ideas to life
-          from initial consultation to deployment and beyond.
+          We provide a full range of development services to bring your ideas to life from initial
+          consultation to deployment and beyond.
         </p>
       </div>
 
@@ -86,7 +86,6 @@ const Services: React.FC = () => {
               </div>
             )}
 
-            
             <div className="mt-6">
               <a
                 href={item.link}

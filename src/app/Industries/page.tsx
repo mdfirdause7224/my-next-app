@@ -49,8 +49,8 @@ const Industries: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-white mb-4">Industries We Serve</h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-          We collaborate with businesses across diverse sectors, crafting tailored digital solutions that
-          meet industry-specific needs and empower growth.
+          We collaborate with businesses across diverse sectors, crafting tailored digital solutions
+          that meet industry-specific needs and empower growth.
         </p>
       </div>
 

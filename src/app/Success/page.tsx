@@ -45,7 +45,8 @@ const SuccessStories: React.FC = () => {
       <div className="max-w-6xl mx-auto text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Success Stories</h2>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          Explore our recent projects that showcase how we transform ideas into impactful, high-performing digital solutions.
+          Explore our recent projects that showcase how we transform ideas into impactful,
+          high-performing digital solutions.
         </p>
       </div>
 

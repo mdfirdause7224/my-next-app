@@ -61,7 +61,11 @@ export default function Footer() {
               <h3 className="font-semibold mb-5">SOCIAL</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="https://www.linkedin.com/company/trangla/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.linkedin.com/company/trangla/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     LinkedIn
                   </a>
                 </li>
