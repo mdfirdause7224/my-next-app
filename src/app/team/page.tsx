@@ -41,7 +41,7 @@ const teamMembers = [
     bio: 'Sameer engineers robust, scalable backend systems building the backbone that ensures performance, security, and reliability.',
   },
   {
-    name: 'Sri Lakshmi Priya',
+    name: 'Sai Lakshmi Priya',
     role: 'Frontend Developer',
     image: '/priya.jpeg',
     linkedin: 'https://www.linkedin.com/in/sai-lakshmi-priya-marturu/',
