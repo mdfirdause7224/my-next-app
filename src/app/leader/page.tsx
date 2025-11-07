@@ -19,9 +19,9 @@ const leadershipTeam = [
   },
   {
     name: 'Harish Veerapaneni',
-    role: 'CTO',
+    role: 'HR Manager',
     image: '/harish.png',
-    bio: 'Harish oversees all technical operations, ensuring each product is scalable, secure, and future-ready with cutting-edge technologies and development practices.',
+    bio: 'Harish fosters a culture of growth, collaboration, and excellence leading talent strategies that empower teams and drive organizational success.',
     linkedin: 'https://www.linkedin.com/in/veerapaneni-harish/',
   },
   {
@@ -64,9 +64,8 @@ export default function LeadershipPage() {
           return (
             <motion.div
               key={leader.name}
-              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${
-                isEven ? '' : 'md:flex-row-reverse'
-              }`}
+              className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${isEven ? '' : 'md:flex-row-reverse'
+                }`}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}

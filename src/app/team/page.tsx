@@ -28,10 +28,10 @@ const teamMembers = [
   },
   {
     name: 'Firdause Moghal',
-    role: 'Frontend Developer',
+    role: 'Frontend Engineer',
     image: '/firdause.png',
-    linkedin: 'https://www.linkedin.com/in/firdause-moghal//',
-    bio: 'Firdause transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
+    linkedin: 'https://www.linkedin.com/in/firdause-moghal/',
+    bio: 'Firdause crafts seamless, interactive, and performant web interfaces turning creative concepts into elegant digital experiences through modern front-end engineering.',
   },
   {
     name: 'Sameer Shaik',
@@ -41,18 +41,25 @@ const teamMembers = [
     bio: 'Sameer engineers robust, scalable backend systems building the backbone that ensures performance, security, and reliability.',
   },
   {
-    name: 'Harsha Vukoti',
+    name: 'Sri Lakshmi Priya',
+    role: 'Frontend Developer',
+    image: '/priya.jpeg',
+    linkedin: 'https://www.linkedin.com/in/sai-lakshmi-priya-marturu/',
+    bio: 'Priya transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
+  },
+  {
+    name: 'Ibrahim Shaik',
     role: 'Full Stack Developer',
-    image: '/harsha.jpg',
-    linkedin: 'https://www.linkedin.com/in/praharsha-vukoti/',
-    bio: 'Harsha is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
+    image: '/ibrahim.jpeg',
+    linkedin: 'https://www.linkedin.com/in/shaik-ibrahim-626ba5386/',
+    bio: 'Ibrahim is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
   {
     name: 'Shaik Lubaba',
-    role: 'Software Engineer',
+    role: 'Frontend Developer',
     image: '/lubaba.jpg',
     linkedin: 'https://www.linkedin.com/in/shaiklubaba/',
-    bio: 'Lubaba is a Software Engineer who ensures perfection in every detail building, testing, and refining each product to deliver seamless, high-performing digital experiences.',
+    bio: 'Lubaba transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
     name: 'Inthiyaz Shaik',
@@ -62,11 +69,11 @@ const teamMembers = [
     bio: 'Inthiyaz transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
-    name: 'Ibrahim Shaik',
+    name: 'Harsha Vukoti',
     role: 'Full Stack Developer',
-    image: '/ibrahim.jpeg',
-    linkedin: 'https://www.linkedin.com/in/shaik-ibrahim-626ba5386/',
-    bio: 'Ibrahim is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
+    image: '/harsha.jpg',
+    linkedin: 'https://www.linkedin.com/in/praharsha-vukoti/',
+    bio: 'Harsha is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
 ];
 
@@ -165,7 +172,7 @@ export default function OurTeamPage() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="max-w-3xl mx-auto text-gray-600 text-lg mb-20"
         >
-          The foundation of our success lies in our culture — collaboration, creativity, and
+          The foundation of our success lies in our culture collaboration, creativity, and
           continuous learning.
         </motion.p>
 
