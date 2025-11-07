@@ -75,6 +75,13 @@ const teamMembers = [
     linkedin: 'https://www.linkedin.com/in/praharsha-vukoti/',
     bio: 'Harsha is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
   },
+  {
+    name: 'Asma Farheen Shaik',
+    role: 'Full Stack Developer',
+    image: '/asma.jpeg',
+    linkedin: 'https://www.linkedin.com/in/shaik-asma-farheen/',
+    bio: 'Asma is a versatile full stack developer who bridges front-end finesse with back-end power, building seamless, scalable, and efficient digital solutions from concept to deployment.',
+  },
 ];
 
 export default function OurTeamPage() {
