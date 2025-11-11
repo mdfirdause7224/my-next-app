@@ -121,7 +121,7 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full flex justify-center z-50 font-inter">
       <div
-        className="flex justify-center py-3 w-full relative"
+        className="flex justify-center py-3 w-full relative space-around"
         ref={dropdownRef}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {

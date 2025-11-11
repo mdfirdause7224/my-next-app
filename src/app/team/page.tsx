@@ -100,7 +100,7 @@ const teamMembers = [
 
 export default function OurTeamPage() {
   return (
-    <main className="bg-white text-gray-800 bg-gradient-to-b from-blue-50 to-white pt-12">
+    <main className="bg-white text-gray-800 mt-10 bg-gradient-to-b from-blue-50 to-white pt-12">
       {/* ================= HERO SECTION ================= */}
       <section className="text-center py-10 relative overflow-hidden">
         <motion.h1
