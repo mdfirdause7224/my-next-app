@@ -34,6 +34,13 @@ const teamMembers = [
     bio: 'Firdause crafts seamless, interactive, and performant web interfaces turning creative concepts into elegant digital experiences through modern front-end engineering.',
   },
   {
+    name: 'Samina Begam Moghal',
+    role: 'Frontend Developer',
+    image: '/samina.jpeg',
+    linkedin: 'https://www.linkedin.com/in/samina-begam-moghal/',
+    bio: 'Samina crafts seamless, interactive, and performant web interfaces turning creative concepts into elegant digital experiences through modern front-end engineering.',
+  },
+  {
     name: 'Sameer Shaik',
     role: 'Backend Developer',
     image: '/sameer.jpeg',
