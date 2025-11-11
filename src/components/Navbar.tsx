@@ -169,7 +169,7 @@ export default function Navbar() {
             {NAV_ITEMS.map((item, idx) => (
               <li
                 key={item.name}
-                className="relative select-none group flex-shrink-0"
+                className="relative select-none group flex-shrink-0 space-around"
                 onMouseEnter={() => setActiveDropdown(idx)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
