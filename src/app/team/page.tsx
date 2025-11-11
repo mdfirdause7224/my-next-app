@@ -62,6 +62,13 @@ const teamMembers = [
     bio: 'Lubaba transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
   },
   {
+    name: 'Syed Tasneem Kousar',
+    role: 'Frontend Developer',
+    image: '/tasneem.jpeg',
+    linkedin: 'https://www.linkedin.com/in/tasneem-kouser-syed/',
+    bio: 'Tasneem transforms designs into dynamic, high-performance user experiences, specializing in React and modern front-end frameworks.',
+  },
+  {
     name: 'Inthiyaz Shaik',
     role: 'Frontend Developer',
     image: '/Inthiyaz.jpeg',
